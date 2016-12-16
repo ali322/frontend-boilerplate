@@ -1,0 +1,9 @@
+{
+    "index": {
+        "html": ["index.html"],
+        "path": "./src/bundle/index/",
+        "entryJS":"index.es6",
+        "entryCSS":"index.styl",
+        "vendor":"common"
+    }
+}

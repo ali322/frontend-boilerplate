@@ -1,0 +1,8 @@
+node_modules/
+src/**/build/
+src/**/dist/
+src/__coverage__/
+dist/
+vendor/
+yarn-error.log
+yarn.lock

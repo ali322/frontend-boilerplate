@@ -1,0 +1,59 @@
+{
+  "name": "frontend-boilerplate",
+  "version": "0.0.1",
+  "description": "frontend project boilerplate",
+  "main": "gulpfile.js",
+  "scripts": {
+    "start": "NODE_ENV=develop node ./task/develop-server.js",
+    "develop": "npm run build && gulp develop-webpack",
+    "release": "npm run production && gulp deploy-webpack && gulp deploy2dist",
+    "build": "webpack --config ./task/webpack.develop.js --display-error-details",
+    "production": "webpack --config ./task/webpack.production.js --display-error-details",
+    "test": "TEST_PORT=8000 karma start ./task/karma.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ali322/frontend-boilerplate.git"
+  },
+  "keywords": [
+    "frontend",
+    "webpack",
+    "gulp"
+  ],
+  "author": "alichen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ali322/frontend-boilerplate/issues"
+  },
+  "homepage": "https://github.com/ali322/frontend-boilerplate#readme",
+  "devDependencies": {
+    "autoprefixer-loader": "^3.2.0",
+    "babel-core": "^6.0.0",
+    "babel-loader": "^6.2.10",
+    "babel-preset-latest": "^6.16.0",
+    "browser-sync": "^2.18.5",
+    "copy": "^0.3.0",
+    "css-loader": "^0.26.1",
+    "del": "^2.2.2",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
+    "fs-extra": "^1.0.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-inject": "^4.1.0",
+    "gulp-rename": "^1.2.2",
+    "lodash": "^4.17.2",
+    "resolve-url-loader": "^1.6.1",
+    "style-loader": "^0.13.1",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^2.4.0",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.14.0",
+    "webpack-dev-middleware": "^1.9.0",
+    "webpack-hot-middleware": "^2.13.2"
+  },
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "normalize.css": "^5.0.0"
+  }
+}
