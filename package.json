@@ -4,7 +4,7 @@
   "description": "frontend project boilerplate",
   "main": "gulpfile.js",
   "scripts": {
-    "start": "NODE_ENV=develop node ./task/develop-server.js",
+    "start": "NODE_ENV=develop LISTEN_PORT=2000 node ./task/develop-server.js",
     "develop": "npm run build && gulp develop-webpack",
     "release": "npm run production && gulp deploy-webpack && gulp deploy2dist",
     "build": "webpack --config ./task/webpack.develop.js --display-error-details",
@@ -60,7 +60,8 @@
     "url-loader": "^0.5.7",
     "webpack": "^1.14.0",
     "webpack-dev-middleware": "^1.9.0",
-    "webpack-hot-middleware": "^2.13.2"
+    "webpack-hot-middleware": "^2.13.2",
+    "yargs": "^6.5.0"
   },
   "dependencies": {
     "jquery": "^3.1.1",

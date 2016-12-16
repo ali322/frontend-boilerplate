@@ -1,5 +1,4 @@
 var webpack = require('webpack');
-// var WebpackDevServer = require('webpack-dev-server');
 var config = require('./webpack.hot-update.js');
 var browserSync = require("browser-sync");
 var webpackDevMiddleware = require("webpack-dev-middleware");
