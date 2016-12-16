@@ -2,8 +2,6 @@ var gulp = require("gulp"),
     inject = require("gulp-inject"),
     // mapstream = require("map-stream"),
     path = require("path"),
-    fs = require("fs"),
-    del = require("del"),
     _ = require("lodash");
 
 var env = require("./environment");
@@ -93,26 +91,3 @@ gulp.task("deploy-webpack", function() {
         })).pipe(gulp.dest(injectedPath));
     });
 });
-gulp.task("deploy-to-dist", function() {
-    // del.sync("./dist");
-    gulp.src(path.join(env.vendorPath, env.distFolder, "*.js"))
-        .pipe(gulp.dest("./dist/js"));
-    gulp.src(path.join(env.vendorPath, env.distFolder, "*.css"))
-        .pipe(gulp.dest("./dist/css"));
-    
-
-    _.each(env.pages, function(page) {
-        var deployTargetHtml = page.html;
-        var pageCssFile = path.join(page.path, page.name, env.distFolder + "/*.css");
-        var pageJsFile = path.join(page.path, page.name, env.distFolder + "/*.js");
-        gulp.src(deployTargetHtml).pipe(gulp.dest("./dist"));
-        gulp.src(pageJsFile).pipe(gulp.dest("./dist/js"))
-        gulp.src(pageCssFile).pipe(gulp.dest("./dist/css"))
-    })
-})
-gulp.task("clean-dist", function() {
-    // del.sync(path.join(env.vendorPath, env.distFolder));
-    _.each(env.pages, function(page) {
-        del.sync(path.join(page.path, page.name, env.distFolder));
-    })
-})

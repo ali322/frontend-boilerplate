@@ -1,6 +1,6 @@
 var webpack = require('webpack'),
     path = require('path'),
-    del = require("del"),
+    fs = require("fs-extra"),
     _ = require("lodash");
 
 // var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('common.js');
@@ -16,7 +16,7 @@ var commonChunks = [];
 var pageEntries = {},
     pageEntryPath = "";
 _.each(env.pages, function(page) {
-    del.sync(path.join(page.path, env.distFolder + '/*.*'));
+    fs.emptydirSync(path.join(page.path, env.distFolder))
     var pageEntry = {};
     pageEntryPath = page.path;
     pageEntry[page.name] = [page.entryJS, page.entryCSS];
@@ -24,7 +24,7 @@ _.each(env.pages, function(page) {
 });
 
 /*build vendors*/
-del.sync(env.vendorPath + "/" + env.distFolder + '/*.js');
+fs.emptydirSync(env.vendorPath + "/" + env.distFolder)
 _.each(env.vendors, function(vendor) {
     commonChunks.push(new webpack.optimize.CommonsChunkPlugin({
         name: vendor.name,
@@ -74,11 +74,11 @@ module.exports = {
         chunkFilename: pageEntryPath + env.distFolder + "[id] - [hash].chunk.js"
     },
     plugins: _.union([
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false
-            }
-        }),
+        // new webpack.optimize.UglifyJsPlugin({
+        //     compress: {
+        //         warnings: false
+        //     }
+        // }),
         new ExtractTextPlugin(pageEntryPath + env.distFolder + "[name]-[hash].css")
     ],commonChunks)
 }

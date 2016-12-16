@@ -1,10 +1,11 @@
 var gulp = require("gulp")
+var cssurl = require("cssurl")
 var fs = require("fs-extra")
 var _ = require("lodash")
 var path = require("path")
 var env = require('./environment')
 
-gulp.task("deploy2dist",function(){
+gulp.task("copy2dist",function(){
     var distPath = path.resolve(__dirname,"../dist")
     //copy bundle dist files to outter `dist` directory
     try{
@@ -67,3 +68,37 @@ gulp.task("deploy2dist",function(){
         console.log('remove vendor directory failed',err)
     }
 })
+
+gulp.task('resolve-css-url',function(){
+    var distFiles
+    try{
+        distFiles = fs.walkSync(path.resolve(__dirname,"../dist"))
+    }catch(err){
+        console.log("read page dist directory failed",err)
+    }
+    _.each(distFiles,function(distFile){
+        if(path.extname(distFile) === ".css"){
+            var rewriter = new cssurl.URLRewriter(function(url){
+                return ".." + url + "?v=" + Date.now()
+            })
+            try{
+                var cssCode = fs.readFileSync(distFile,'utf8')
+                cssCode = rewriter.rewrite(cssCode)
+                fs.writeFileSync(distFile,cssCode)
+            }catch(err){
+                console.log("rewrite dist file failed",err)
+            }
+        }
+        if(path.extname(distFile) === ".html"){
+            try{
+                var htmlCode = fs.readFileSync(distFile,'utf8')
+                htmlCode = htmlCode.replace(/(<img[\s\S]+?)src=['"]\.\.\/asset([^'"]+)['"]/i,"$1src='asset$2'")
+                fs.writeFileSync(distFile,htmlCode)
+            }catch(err){
+                console.log("rewrite dist file failed",err)
+            }
+        }
+    })
+})
+
+gulp.task('deploy2dist',['copy2dist','resolve-css-url'])
