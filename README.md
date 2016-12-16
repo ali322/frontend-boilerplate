@@ -1,6 +1,6 @@
 #Frontend Scaffold
 [![Build Status](https://travis-ci.org/ali322/frontend-scaffold.svg)](https://travis-ci.org/ali322/frontend-scaffold)
-[![Dependency Status](https://gemnasium.com/ali322/frontend-scaffold.svg)](https://gemnasium.com/ali322/frontend-scaffold)
+[![Dependency Status](https://gemnasium.com/badges/github.com/ali322/frontend-boilerplate.svg)](https://gemnasium.com/github.com/ali322/frontend-boilerplate)
 
 yet another simple boilerplate for frontend project
 
@@ -15,7 +15,7 @@ Release to publish
 ===
 
 1. run `npm run release`
-2. check your all the pages and related css,jss in the "dist" directory
+2. check your all the pages and related css,jss,assets in the "dist" directory
 
 Directory Structure
 ===
