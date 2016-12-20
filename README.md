@@ -53,3 +53,8 @@ task/
 server.js #webpack dev server entry file
 gulpfile.js #task entry
 ```
+
+
+## License
+
+[MIT License](http://en.wikipedia.org/wiki/MIT_License)
