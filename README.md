@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.org/ali322/frontend-boilerplate.svg?branch=master)](https://travis-ci.org/ali322/frontend-boilerplate)
 [![Dependency Status](https://gemnasium.com/badges/github.com/ali322/frontend-boilerplate.svg)](https://gemnasium.com/github.com/ali322/frontend-boilerplate)
 
-yet another simple boilerplate for frontend project
+yet another simple boilerplate for frontend project [中文文档](./README_zh.md)
 
 Develop
 ===
@@ -28,21 +28,21 @@ src/
     |-- bundle/
         |-- common/ #css and js in common use
         |-- index/ #index page's bundle
-            |-- script/ #partial js of index page
-            |-- stylesheet/ #partial css of index page
+            |-- script/ #index page'js folder
+            |-- stylesheet/ #index page'css folder
             |-- index.js #entry js
             |-- index.css #entry css
-        |-- .../  #more your own page
+        |-- .../  #more pages
     |-- page/ #page's html
 dist/
-    |-- index/
-        |-- index.html #dist index.html
-        |-- js/ #dist js come here
-        |-- css/ #dist css come here
+    |-- assets/ #dist images,fonts and so on
+    |-- js/ #dist js come here
+    |-- css/ #dist css come here
+    |-- index.html #dist index.html
     |-- .../ #more dist pages
 task/
     |-- config/
-        |-- page.json #define page's path and other setup
+        |-- page.json #define page's path and other compile config
         |-- vendor.json #define third party libraries
     |-- environment.js  #define page build's env variables
     |-- develop-sever.js   #develop server entry
@@ -50,7 +50,6 @@ task/
     |-- webpack.develop.js #compile source code and vendors for develop
     |-- webpack.production.js #compile source code and vendors for production
     |-- webpack.hot-update.js #compile source code and vendors for develop in HMR
-server.js #webpack dev server entry file
 gulpfile.js #task entry
 ```
 
