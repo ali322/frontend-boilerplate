@@ -4,7 +4,7 @@
 
 yet another simple boilerplate for frontend project
 
-Start to work
+Develop
 ===
 
 1. clone to your local disk `git clone https://github.com/ali322/frontend-boilerplate`
@@ -12,7 +12,7 @@ Start to work
 3. run `npm run develop` build source and inject to html
 3. run `npm start` to start develop server
 
-Release to publish
+Deploy
 ===
 
 1. run `npm run deploy`
