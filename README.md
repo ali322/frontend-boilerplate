@@ -9,12 +9,13 @@ Start to work
 
 1. clone to your local disk `git clone https://github.com/ali322/frontend-boilerplate`
 2. run `npm install`
-3. run `npm start` to start,just simple and clean
+3. run `npm run develop` build source and inject to html
+3. run `npm start` to start develop server
 
 Release to publish
 ===
 
-1. run `npm run release`
+1. run `npm run deploy`
 2. check your all the pages and related css,jss,assets in the "dist" directory
 
 Directory Structure

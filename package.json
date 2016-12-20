@@ -6,9 +6,9 @@
   "scripts": {
     "start": "NODE_ENV=develop LISTEN_PORT=2000 node ./task/develop-server.js",
     "develop": "npm run build && gulp develop-webpack",
-    "release": "npm run production && gulp deploy-webpack && gulp deploy2dist",
+    "deploy": "npm run release && gulp deploy-webpack && gulp deploy2dist",
     "build": "webpack --config ./task/webpack.develop.js --display-error-details",
-    "production": "webpack --config ./task/webpack.production.js --display-error-details",
+    "release": "webpack --config ./task/webpack.production.js --display-error-details",
     "test": "TEST_PORT=8000 karma start ./task/karma.config.js"
   },
   "repository": {
