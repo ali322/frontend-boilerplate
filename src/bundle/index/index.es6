@@ -3,5 +3,5 @@
 import $ from "jquery"
 
 $(document).ready(()=>{
-    $('#btn').click(()=>alert('hello world'))
+    $('#btn').click(()=>alert('hello world!'))
 })

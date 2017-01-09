@@ -3,33 +3,50 @@ var webpack = require('webpack'),
     _ = require("lodash");
 
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var InjectHtmlPlugin = require("inject-html-webpack-plugin")
 var node_modules_dir = path.resolve(__dirname, '../node_modules');
 var env = require('./environment.js');
 
 /*build pages*/
 var entry = {};
 var commonChunks = [];
+var htmls = [];
 
-_.each(env.pages, function(page) {
-    var pageEntry = {};
-    pageEntry[page.name] = [
-        // 'webpack-dev-server/client?http://localhost:3000',
+_.each(env.modules, function(moduleObj) {
+    var moduleObjEntry = {};
+    moduleObjEntry[moduleObj.name] = [
         "webpack-hot-middleware/client",
         'webpack/hot/dev-server',
-        page.entryJS,
-        page.entryCSS
+        moduleObj.entryJS,
+        moduleObj.entryCSS
     ];
-    _.extend(entry, pageEntry);
+    _.extend(entry, moduleObjEntry);
+    moduleObj.html.forEach(function(html) {
+        var _chunks = [moduleObj.name]
+        if (moduleObj.vendor) {
+            moduleObj.vendor.js && _chunks.push(moduleObj.vendor.js)
+            moduleObj.vendor.css && _chunks.push(moduleObj.vendor.css)
+        }
+        htmls.push(new InjectHtmlPlugin({
+            prefixURI:env.hmrPath,
+            chunks: _chunks,
+            filename: html
+        }))
+    })
 });
 
 /*build vendors*/
-_.each(env.vendors, function(vendor) {
+_.each(env.vendors['js'], function(vendor, key) {
     commonChunks.push(new webpack.optimize.CommonsChunkPlugin({
-        name: vendor.name,
-        // filename:env.vendorPath + env.buildFolder + vendor.name + ".js"
+        name: key,
+        chunks: [key],
+        filename: env.vendorPath + env.buildFolder + key + ".js"
     }))
-    entry[vendor.name] = vendor.entryJS;
+    entry[key] = vendor
 });
+_.each(env.vendors['css'], function(vendor, key) {
+    entry[key] = vendor;
+})
 
 module.exports = {
     entry: entry,
@@ -49,12 +66,9 @@ module.exports = {
         }, {
             test: /\.styl/,
             exclude: [node_modules_dir],
-            // loader: ExtractTextPlugin.extract('style', 'css!sass!autoprefixer'),
             loader: 'style!css!autoprefixer!stylus'
         }, {
             test: /\.css/,
-            exclude: [node_modules_dir],
-            // loader: ExtractTextPlugin.extract('style', 'css!autoprefixer'),
             loader: 'style!css'
         }, {
             test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
@@ -71,7 +85,7 @@ module.exports = {
     devtool: "#eval-source-map",
     watch: true,
     resolve: {
-        extensions: ["", ".webpack-loader.js", ".web-loader.js", ".loader.js", ".js", ".json"]
+        extensions: ["", ".js", ".json", ".es6", ".jsx", ".style"]
     },
     output: {
         path: path.join(__dirname, "../src"),
@@ -83,6 +97,5 @@ module.exports = {
         new webpack.optimize.OccurenceOrderPlugin(true),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin(),
-        // new ExtractTextPlugin("[name].css")
-    ],commonChunks)
+    ], commonChunks,htmls)
 }

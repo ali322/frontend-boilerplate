@@ -1,43 +1,37 @@
 var path = require("path"),
     _ = require("lodash");
 var env = {
-    buildFolder: "build/",
-    distFolder: "dist/",
-    vendorPath: "./src/vendor/",
-    pagePath: "./src/page/",
+    buildFolder: "build",
+    distFolder: "dist",
+    vendorFolder: "vendor",
+    bundleFolder: "bundle",
+    sourcePath: "./src",
+    pageFolder: "/page/",
     hmrPath: "/hmr/"
 };
 
-var pageConfig = require('./config/page.json'),
-    pages = [];
-_.each(pageConfig, function(pageObj, pageName) {
-    var entryJS = pageObj.path + pageObj.entryJS;
-    var entryCSS = pageObj.path + pageObj.entryCSS;
+var moduleConfig = require('./config/module.json'),
+    modules = [];
+_.each(moduleConfig, function(moduleObj, moduleName) {
+    var entryJS =path.resolve(path.join(env.sourcePath, env.bundleFolder, moduleObj.path,
+         moduleObj.entryJS !== undefined ? moduleObj.entryJS : moduleObj.name + ".js"))
+    var entryCSS =path.resolve(path.join(env.sourcePath, env.bundleFolder, moduleObj.path,
+         moduleObj.entryCSS !== undefined ? moduleObj.entryCSS : moduleObj.name + ".css"))
     var entryHtml = [];
-    _.each(pageObj.html, function(pageHtml) {
-        entryHtml.push(env.pagePath + pageHtml);
+    _.each(moduleObj.html, function(pageHtml) {
+        entryHtml.push(env.sourcePath+env.pageFolder+pageHtml);
     })
-    var page = _.extend(pageObj, {
-        name: pageName,
+    var module = _.extend(moduleObj, {
+        name: moduleName,
         entryCSS: entryCSS,
         entryJS: entryJS,
         html: entryHtml
     });
-    pages.push(page);
+    modules.push(module);
 })
-env.pages = pages;
+env.modules = modules;
 
-var vendorConfig = require('./config/vendor.json'),
-    vendors = [];
-_.each(vendorConfig, function(vendorJS, vendorName) {
-    var vendor = {
-        name: vendorName,
-        entryJS: vendorJS,
-        // entryCSS:vendorObj.css
-        // entry:_.union(vendorObj.js,vendorObj.css)
-    };
-    vendors.push(vendor);
-});
-env.vendors = vendors;
+var vendorConfig = require('./config/vendor.json')
+env.vendors = vendorConfig;
 
 module.exports = env;

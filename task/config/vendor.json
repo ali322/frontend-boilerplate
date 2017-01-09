@@ -1,5 +1,10 @@
 {
-    "vendor":[
-        "jquery","lodash"
-    ]
+    "js":{
+        "vendor":[
+            "jquery","lodash"
+        ]
+    },
+    "css":{
+        "common":["normalize.css/normalize.css"]
+    }
 }

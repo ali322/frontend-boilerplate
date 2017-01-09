@@ -1,9 +1,12 @@
 {
     "index": {
         "html": ["index.html"],
-        "path": "./src/bundle/index/",
+        "path": "index/",
         "entryJS":"index.es6",
         "entryCSS":"index.styl",
-        "vendor":"common"
+        "vendor":{
+            "js":"vendor",
+            "css":"common"
+        }
     }
 }
