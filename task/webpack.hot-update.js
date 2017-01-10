@@ -11,12 +11,13 @@ var postcssImport = require('postcss-import')
 var cssURL = require('postcss-url')
 var helper = require('./helper')
 
-/*build pages*/
+/** build variables*/
 var entry = {};
 var commonChunks = [];
 var htmls = [];
 var ASSET_INPUT = path.join(env.sourcePath,env.assetFolder)
 
+/** build modules */
 _.each(env.modules, function(moduleObj) {
     var moduleObjEntry = {};
     moduleObjEntry[moduleObj.name] = [
