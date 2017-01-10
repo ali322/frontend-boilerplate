@@ -10,7 +10,7 @@ var listenPort = process.env.LISTEN_PORT || 5000;
 browserSync({
     port:listenPort,
     server: {
-        baseDir: "./src",
+        baseDir: "./",
         middleware: [
             webpackDevMiddleware(bundler, {
                 publicPath: config.output.publicPath,

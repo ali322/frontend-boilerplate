@@ -1,4 +1,4 @@
-var webpackConfig = require("./webpack.develop.js");
+var webpackConfig = require("./webpack.production");
 var testPort = process.env.TEST_PORT || 6000;
 
 module.exports = function(config) {

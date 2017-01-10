@@ -1,6 +1,5 @@
 var webpack = require('webpack'),
     path = require('path'),
-    fs = require("fs"),
     del = require("del"),
     _ = require("lodash");
 
@@ -14,19 +13,23 @@ var autoPrefixer = require('autoprefixer')
 var postcssImport = require('postcss-import')
 var sprites = require('postcss-sprites')
 var cssURL = require('postcss-url')
-var mime = require('mime')
 
-/*build const*/
+/** build variables*/
 var entry = {};
 var commonChunks = [];
 var htmls = [];
+var ASSET_OUTPUT = env.assetFolder
+var ASSET_INPUT = path.join(env.sourcePath,env.assetFolder)
 
-/*build pages*/
+/** build pages*/
 var moduleEntries = {}
 
-del.sync(path.resolve(env.distFolder))
+/** clean build assets*/
+del.sync([path.resolve(env.distFolder),
+    path.resolve(path.join(env.assetFolder,env.distFolder))])
+
+
 _.each(env.modules, function(moduleObj) {
-    // fs.emptydirSync(path.join(moduleObj.path, env.distFolder))
     var moduleEntry = {};
     moduleEntry[moduleObj.name] = [moduleObj.entryJS, moduleObj.entryCSS].concat(moduleObj.html);
     moduleObj.html.forEach(function(html) {
@@ -36,7 +39,9 @@ _.each(env.modules, function(moduleObj) {
             moduleObj.vendor.css && _chunks.push(moduleObj.vendor.css)
         }
         htmls.push(new InjectHtmlPlugin({
-            prefixURI:"../",
+            processor:function(_url){
+                return _url.split(path.sep).slice(-1)[0]
+            },
             chunks: _chunks,
             filename: html,
             customInject: [{
@@ -49,7 +54,7 @@ _.each(env.modules, function(moduleObj) {
     _.extend(moduleEntries, moduleEntry)
 });
 
-/*build vendors*/
+/** build vendors*/
 _.each(env.vendors['js'], function(vendor, key) {
     commonChunks.push(new webpack.optimize.CommonsChunkPlugin({
         name: key,
@@ -62,7 +67,7 @@ _.each(env.vendors['css'], function(vendor, key) {
     entry[key] = vendor;
 })
 
-/*add modules and vendors to entry point*/
+/** add modules and vendors to entry point*/
 _.extend(entry, moduleEntries)
 
 module.exports = {
@@ -79,7 +84,7 @@ module.exports = {
         }, , {
             test: /\.html/,
             exclude: [node_modules_dir],
-            loader: 'file?publicPath=../&name=dist/page/[name].[ext]!extract!html'
+            loader: 'file?publicPath=../&name='+env.distFolder+'/[name]/[name].[ext]!extract!html'
         }, {
             test: /\.styl/,
             exclude: [node_modules_dir],
@@ -91,8 +96,13 @@ module.exports = {
             test: /\.(png|jpg)$/,
             exclude: [node_modules_dir],
             loaders: [
-                'file?publicPath=../../&hash=sha512&digest=hex&name=asset/image/[hash:8].[ext]',
+                'file?publicPath=../../&hash=sha512&digest=hex&name='+ASSET_OUTPUT+'/image/[hash:8].[ext]',
                 'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
+            ]
+        },{
+            test:/\.(eot|ttf|woff2|svg|woff)/,
+            loaders: [
+                'file?publicPath=../../&hash=sha512&digest=hex&name='+ASSET_OUTPUT+'/font/[hash:8].[ext]',
             ]
         }]
     },
@@ -100,20 +110,12 @@ module.exports = {
         return [postcssImport({ addDependencyTo: true }),
             autoPrefixer(),
             cssURL({
-                url: function(URL, decl, from, dirname, to, options, result) {
-                    var _url = path.join(path.relative(to, 'asset'), URL)
-                    var _file = path.resolve(path.join('asset', URL))
-                    var _stats = fs.statSync(_file)
-                    var mimeType = mime.lookup(_file)
-                    if (_stats.size <= 500) {
-                        _file = fs.readFileSync(_file)
-                        return "data:" + mimeType + ";base64," + _file.toString("base64")
-                    }
-                    return _url
+                url: function(originURL, decl, from, dirname, to, options, result) {
+                    return helper.urlResolver(originURL,from,to,ASSET_INPUT)
                 }
             }),
             sprites({
-                spritePath: path.join('asset', 'sprites')
+                spritePath: path.join(env.assetFolder, 'sprites')
             })
         ]
     },

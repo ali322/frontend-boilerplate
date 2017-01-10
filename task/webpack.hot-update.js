@@ -6,11 +6,16 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var InjectHtmlPlugin = require("inject-html-webpack-plugin")
 var node_modules_dir = path.resolve(__dirname, '../node_modules');
 var env = require('./environment.js');
+var autoPrefixer = require('autoprefixer')
+var postcssImport = require('postcss-import')
+var cssURL = require('postcss-url')
+var helper = require('./helper')
 
 /*build pages*/
 var entry = {};
 var commonChunks = [];
 var htmls = [];
+var ASSET_INPUT = path.join(env.sourcePath,env.assetFolder)
 
 _.each(env.modules, function(moduleObj) {
     var moduleObjEntry = {};
@@ -28,7 +33,7 @@ _.each(env.modules, function(moduleObj) {
             moduleObj.vendor.css && _chunks.push(moduleObj.vendor.css)
         }
         htmls.push(new InjectHtmlPlugin({
-            prefixURI:env.hmrPath,
+            processor:env.hmrPath,
             chunks: _chunks,
             filename: html
         }))
@@ -66,21 +71,31 @@ module.exports = {
         }, {
             test: /\.styl/,
             exclude: [node_modules_dir],
-            loader: 'style!css!autoprefixer!stylus'
+            loader: 'style!css!postcss!stylus'
         }, {
             test: /\.css/,
             loader: 'style!css'
         }, {
             test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-            loader: "url-loader?limit=10000&minetype=application/font-woff"
+            loader: "url-loader?limit=1000&minetype=application/font-woff"
         }, {
             test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
             loader: "file-loader"
         }, {
             test: /\.(png|jpg)$/,
             exclude: [node_modules_dir],
-            loader: 'url?limit=25'
+            loader: 'url?limit=2500'
         }]
+    },
+    postcss: function(webpack) {
+        return [postcssImport({ addDependencyTo: true }),
+            autoPrefixer(),
+            cssURL({
+                url: function(originURL, decl, from, dirname, to, options, result) {
+                    return helper.urlResolver(originURL,from,to,ASSET_INPUT)
+                }
+            })
+        ]
     },
     devtool: "#eval-source-map",
     watch: true,
@@ -88,9 +103,9 @@ module.exports = {
         extensions: ["", ".js", ".json", ".es6", ".jsx", ".style"]
     },
     output: {
-        path: path.join(__dirname, "../src"),
-        filename: "[name].js",
-        chunkFilename: "[id].chunk.js",
+        path: path.resolve(process.cwd()),
+        filename: path.join(env.distFolder,"[name]","[name]-[hash:8].js"),
+        chunkFilename: path.join(env.distFolder,"[name]","[id]-[hash:8].chunk.js"),
         publicPath: env.hmrPath
     },
     plugins: _.union([
