@@ -5,7 +5,7 @@
   "main": "gulpfile.js",
   "scripts": {
     "start": "NODE_ENV=develop LISTEN_PORT=2000 node ./task/develop-server.js",
-    "build": "webpack --config ./task/webpack.production.js --display-error-details",
+    "release": "webpack --config ./task/webpack.production.js --display-error-details",
     "test": "TEST_PORT=8000 karma start ./task/karma.config.js"
   },
   "repository": {

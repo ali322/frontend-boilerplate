@@ -14,7 +14,7 @@
 部署
 ===
 
-1. 运行 `npm run deploy`
+1. 运行 `npm run release`
 2. 打开 `dist` 和 `asset` 文件夹 查看部署结果,并发布或上传文件夹
 
 目录结构

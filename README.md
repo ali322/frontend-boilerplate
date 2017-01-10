@@ -14,7 +14,7 @@ Develop
 Deploy
 ===
 
-1. run `npm run build`
+1. run `npm run release`
 2. check your all the pages and related css,jss in "dist" directory and related image,font in "asset" directory
 
 Directory Structure
