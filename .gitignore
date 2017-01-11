@@ -6,3 +6,4 @@ dist/
 vendor/
 yarn-error.log
 yarn.lock
+.happypack/

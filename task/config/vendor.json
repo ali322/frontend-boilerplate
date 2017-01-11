@@ -2,6 +2,9 @@
     "js":{
         "vendor":[
             "jquery","lodash"
+        ],
+        "react":[
+            "react","react-dom"
         ]
     },
     "css":{

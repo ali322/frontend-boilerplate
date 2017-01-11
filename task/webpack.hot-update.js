@@ -1,5 +1,6 @@
 var webpack = require('webpack'),
     path = require('path'),
+    fs = require('fs'),
     _ = require("lodash");
 
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
@@ -14,9 +15,22 @@ var happypackPlugin  = helper.happypackPlugin()
 
 /** build variables*/
 var entry = {};
-var commonChunks = [];
 var htmls = [];
 var ASSET_INPUT = path.join(env.sourcePath,env.assetFolder)
+
+/*build vendors*/
+var dllRefs = []
+var vendorJS = fs.readdirSync(path.join(env.distFolder,env.vendorFolder))
+_.each(env.vendors['js'], function(vendor, key) {
+    var _manifest = require(path.join("..",env.distFolder,env.vendorFolder,key+'-manifest.json'))
+    dllRefs.push(new webpack.DllReferencePlugin({
+        context:__dirname,
+        manifest:_manifest,
+    }))
+});
+_.each(env.vendors['css'], function(vendor, key) {
+    entry[key] = vendor;
+})
 
 /** build modules */
 _.each(env.modules, function(moduleObj) {
@@ -28,31 +42,28 @@ _.each(env.modules, function(moduleObj) {
         moduleObj.entryCSS
     ];
     _.extend(entry, moduleObjEntry);
-    moduleObj.html.forEach(function(html) {
-        var _chunks = [moduleObj.name]
-        if (moduleObj.vendor) {
-            moduleObj.vendor.js && _chunks.push(moduleObj.vendor.js)
-            moduleObj.vendor.css && _chunks.push(moduleObj.vendor.css)
+    var _chunks = [moduleObj.name]
+    var _more = {js:[]}
+    if (moduleObj.vendor) {
+        if(moduleObj.vendor.js){
+            _more.js = vendorJS.filter(function(v){
+                var _regexp = new RegExp(moduleObj.vendor.js+"-\\w+\\.js$")
+                return _regexp.test(v)
+            }).map(function(v){
+                return path.join('/',env.distFolder,env.vendorFolder,v)
+            })
         }
+        moduleObj.vendor.css && _chunks.push(moduleObj.vendor.css)
+    }
+    moduleObj.html.forEach(function(html) {
         htmls.push(new InjectHtmlPlugin({
             processor:env.hmrPath,
+            more:_more,
             chunks: _chunks,
             filename: html
         }))
     })
 });
-
-/*build vendors*/
-_.each(env.vendors['js'], function(vendor, key) {
-    commonChunks.push(new webpack.optimize.CommonsChunkPlugin({
-        name: key,
-        chunks: [key]
-    }))
-    entry[key] = vendor
-});
-_.each(env.vendors['css'], function(vendor, key) {
-    entry[key] = vendor;
-})
 
 module.exports = {
     entry: entry,
@@ -113,5 +124,5 @@ module.exports = {
         new webpack.optimize.OccurenceOrderPlugin(true),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin(),
-    ], happypackPlugin,commonChunks,htmls)
+    ],dllRefs, happypackPlugin,htmls)
 }
