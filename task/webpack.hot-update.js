@@ -10,6 +10,7 @@ var autoPrefixer = require('autoprefixer')
 var postcssImport = require('postcss-import')
 var cssURL = require('postcss-url')
 var helper = require('./helper')
+var happypackPlugin  = helper.happypackPlugin()
 
 /** build variables*/
 var entry = {};
@@ -45,8 +46,7 @@ _.each(env.modules, function(moduleObj) {
 _.each(env.vendors['js'], function(vendor, key) {
     commonChunks.push(new webpack.optimize.CommonsChunkPlugin({
         name: key,
-        chunks: [key],
-        filename: env.vendorPath + env.buildFolder + key + ".js"
+        chunks: [key]
     }))
     entry[key] = vendor
 });
@@ -64,7 +64,7 @@ module.exports = {
         }, {
             test: /\.(es6|jsx)$/,
             exclude: [node_modules_dir],
-            loader: 'babel'
+            loader: 'happypack/loader?id=js'
         }, , {
             test: /\.html/,
             exclude: [node_modules_dir],
@@ -72,7 +72,7 @@ module.exports = {
         }, {
             test: /\.styl/,
             exclude: [node_modules_dir],
-            loader: 'style!css!postcss!stylus'
+            loader: 'style!css!postcss!happypack/loader?id=stylus'
         }, {
             test: /\.css/,
             loader: 'style!css'
@@ -113,5 +113,5 @@ module.exports = {
         new webpack.optimize.OccurenceOrderPlugin(true),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin(),
-    ], commonChunks,htmls)
+    ], happypackPlugin,commonChunks,htmls)
 }
