@@ -9,7 +9,8 @@
 
 1. 克隆至本地 `git clone https://github.com/ali322/frontend-boilerplate`
 2. 运行 `npm install`
-3. 运行 `npm start` 启动开发服务器
+3. 运行 `npm run dll` 打包第三方库
+4. 运行 `npm start` 启动开发服务器
 
 部署
 ===

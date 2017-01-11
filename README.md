@@ -9,7 +9,8 @@ Develop
 
 1. clone to your local disk `git clone https://github.com/ali322/frontend-boilerplate`
 2. run `npm install`
-3. run `npm start` to start develop server
+3. run `npm run dll` to build vendor libraries
+4. run `npm start` to start develop server
 
 Deploy
 ===
