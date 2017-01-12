@@ -106,10 +106,15 @@ module.exports = {
                 'url-loader?limit=2500&outputPath=' + ASSET_IMAGE_OUTPUT + '&hash=sha512&digest=hex&name=[hash:8].[ext]',
                 'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
             ]
+        },{
+            test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+            loaders: [
+                'url-loader?limit=2500&outputPath=' + ASSET_FONT_OUTPUT + '&hash=sha512&digest=hex&name=[hash:8].[ext]',
+            ]
         }, {
             test: /\.(eot|ttf|woff2|svg|woff)/,
             loaders: [
-                'url-loader?limit=2500&outputPath=' + ASSET_FONT_OUTPUT + '&hash=sha512&digest=hex&name=[hash:8].[ext]',
+                'file-loader?outputPath=' + ASSET_FONT_OUTPUT + '&hash=sha512&digest=hex&name=[hash:8].[ext]',
             ]
         }]
     },
