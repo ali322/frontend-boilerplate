@@ -25,7 +25,7 @@ var HTML_OUPUT = path.join(env.distFolder, path.sep)
 var ASSET_INPUT = path.join(env.sourcePath, env.assetFolder)
 
 /** clean build assets*/
-del.sync([path.join(env.distFolder,env.assetFolder)])
+del.sync([path.join(env.distFolder,env.assetFolder),path.join(env.distFolder,env.vendorFolder,'*.css')])
 
 /** build vendors*/
 var dllRefs = []
@@ -103,13 +103,13 @@ module.exports = {
             test: /\.(png|jpg)$/,
             exclude: [node_modules_dir],
             loaders: [
-                'file?outputPath=' + ASSET_IMAGE_OUTPUT + '&hash=sha512&digest=hex&name=[hash:8].[ext]',
+                'url-loader?limit=2500&outputPath=' + ASSET_IMAGE_OUTPUT + '&hash=sha512&digest=hex&name=[hash:8].[ext]',
                 'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
             ]
         }, {
             test: /\.(eot|ttf|woff2|svg|woff)/,
             loaders: [
-                'file?outputPath=' + ASSET_FONT_OUTPUT + '&hash=sha512&digest=hex&name=[hash:8].[ext]',
+                'url-loader?limit=2500&outputPath=' + ASSET_FONT_OUTPUT + '&hash=sha512&digest=hex&name=[hash:8].[ext]',
             ]
         }]
     },
@@ -121,7 +121,8 @@ module.exports = {
         }
     },
     postcss: function(webpack) {
-        return [postcssImport({ addDependencyTo: true }),
+        return [
+            postcssImport({ addDependencyTo: true }),
             autoPrefixer(),
             cssURL({
                 url: function(originURL, decl, from, dirname, to, options, result) {
@@ -145,17 +146,17 @@ module.exports = {
         new webpack.DefinePlugin({
             'process.env': { NODE_ENV: JSON.stringify('production') }
         }),
-        new webpack.optimize.DedupePlugin(),
-        new webpack.optimize.OccurenceOrderPlugin(true),
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false
-            },
-            output: {
-                comments: false
-            },
-            sourceMap: false
-        }),
+        // new webpack.optimize.DedupePlugin(),
+        // new webpack.optimize.OccurenceOrderPlugin(true),
+        // new webpack.optimize.UglifyJsPlugin({
+        //     compress: {
+        //         warnings: false
+        //     },
+        //     output: {
+        //         comments: false
+        //     },
+        //     sourceMap: false
+        // }),
         new ExtractTextPlugin(path.join(env.distFolder, "[name]", "[name]-[hash:8].css")),
         new ChunkTransformPlugin({
             chunks: ['common'],
