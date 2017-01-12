@@ -112,7 +112,7 @@ module.exports = {
                 'url-loader?limit=2500&outputPath=' + ASSET_FONT_OUTPUT + '&hash=sha512&digest=hex&name=[hash:8].[ext]',
             ]
         }, {
-            test: /\.(eot|ttf|woff2|svg|woff)/,
+            test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
             loaders: [
                 'file-loader?outputPath=' + ASSET_FONT_OUTPUT + '&hash=sha512&digest=hex&name=[hash:8].[ext]',
             ]
