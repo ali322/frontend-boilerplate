@@ -9,13 +9,14 @@ Develop
 
 1. clone to your local disk `git clone https://github.com/ali322/frontend-boilerplate`
 2. run `npm install`
-3. run `npm run dll` to build vendor libraries
-4. run `npm start` to start develop server
+3. run `npm install nva -g`
+4. run `nva vendor` to build vendor libraries
+5. run `nva dev` to start develop server
 
 Deploy
 ===
 
-1. run `npm run release`
+1. run `nva build`
 2. check your all the pages and related css,jss in "dist" directory and related image,font in "asset" directory
 
 Directory Structure

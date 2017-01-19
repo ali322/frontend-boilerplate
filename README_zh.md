@@ -9,13 +9,14 @@
 
 1. 克隆至本地 `git clone https://github.com/ali322/frontend-boilerplate`
 2. 运行 `npm install`
-3. 运行 `npm run dll` 打包第三方库
-4. 运行 `npm start` 启动开发服务器
+3. 运行 `npm install nva -g`
+4. 运行 `nva vendor` 打包第三方库
+5. 运行 `nva dev` 启动开发服务器
 
 部署
 ===
 
-1. 运行 `npm run release`
+1. 运行 `nva build`
 2. 打开 `dist` 和 `asset` 文件夹 查看部署结果,并发布或上传文件夹
 
 目录结构
