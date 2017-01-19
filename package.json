@@ -27,7 +27,9 @@
   "devDependencies": {
     "ava": "^0.17.0",
     "babel-core": "^6.0.0",
-    "babel-preset-latest": "^6.16.0"
+    "babel-preset-latest": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-react-optimize": "^1.0.1"
   },
   "dependencies": {
     "bootstrap": "^3.3.7",
