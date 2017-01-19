@@ -1,5 +1,5 @@
 'use strict';
-import expect from "expect";    
+var expect = require('expect')    
 
 describe("index",()=>{
     it("should pass test",()=>{

@@ -1,0 +1,43 @@
+[{
+    "url":"/api/users",
+    "method":"get",
+    "response":{
+        "code":200,
+        "data":[
+            {"id":0,"name":"smith"},
+            {"id":1,"name":"jacky"},
+            {"id":2,"name":"tommy"}
+        ]
+    }
+},
+{
+    "url":"/api/user",
+    "method":"post",
+    "response":{
+        "code":200,
+        "data":{
+            "id":6
+        }
+    }
+},
+{
+    "url":"/api/user",
+    "method":"delete",
+    "response":{
+        "code":200,
+        "data":{
+            "id":6
+        }
+    }
+},
+{
+    "url":"/api/user",
+    "method":"put",
+    "response":{
+        "code":200,
+        "data":{
+            "id":6
+        }
+    }
+}
+]

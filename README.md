@@ -22,13 +22,18 @@ Directory Structure
 ===
 
 ```sh
-assets/ #dist images,fonts and so on
+.nva/
+    |-- module.json #module config
+    |-- nva.json    #project config
+    |-- vendor.json #third party libraries config
 dist/
+    |-- asset/ #images,fonts and so on
     |-- index/ 
         |-- index-[hash].js #dist js come here
         |-- index-[hash].css #dist css come here
         |-- index.html #dist index.html
     |-- .../ #more dist pages
+    |-- vendor/ third party libraries
 src/
     |-- asset/ #images,fonts and so on
     |-- bundle/
@@ -40,14 +45,6 @@ src/
             |-- index.css #entry css
         |-- .../  #more pages
     |-- page/ #page's html
-task/
-    |-- config/
-        |-- module.json #define page's path and other compile config
-        |-- vendor.json #define third party libraries
-    |-- environment.js  #define page build's env variables
-    |-- develop-sever.js   #develop server entry
-    |-- webpack.production.js #compile source code and vendors for production
-    |-- webpack.hot-update.js #compile source code and vendors for develop in HMR
 ```
 
 

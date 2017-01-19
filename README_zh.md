@@ -22,6 +22,10 @@
 ===
 
 ```sh
+.nva/
+    |-- module.json #模块配置
+    |-- nva.json    #项目配置
+    |-- vendor.json #第三方包配置
 src/
     |-- asset/ #图片,字体等等
     |-- bundle/
@@ -33,21 +37,14 @@ src/
             |-- index.css #入口css
         |-- .../  #更多的页面模块
     |-- page/ #页面html目录
-asset/ #已编译的图片,字体等等
+
 dist/
+    |-- asset/ #已编译的图片,字体等等
     |-- index/
         |-- index-[hash].js #已编译的js
         |-- index-[hash].css #已编译的css
         |-- index.html #已编译的html
     |-- .../ #更多的已编译的html
-task/
-    |-- config/
-        |-- module.json #定义页面路径和源文件编译配置
-        |-- vendor.json #定义第三方库
-    |-- environment.js  #编译时环境变量
-    |-- develop-sever.js   #开发服务器启动脚本
-    |-- webpack.production.js #发布环境源码编译任务
-    |-- webpack.hot-update.js #热更新环境源码编译任务
 ```
 
 
