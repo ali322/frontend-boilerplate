@@ -12,6 +12,8 @@
 3. 运行 `npm install nva -g`
 4. 运行 `nva vendor` 打包第三方库
 5. 运行 `nva dev` 启动开发服务器
+6. 运行 `npm run lint` 检查代码
+7. 运行 `npm test` 执行测试用例
 
 部署
 ===

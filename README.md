@@ -12,6 +12,8 @@ Develop
 3. run `npm install nva -g`
 4. run `nva vendor` to build vendor libraries
 5. run `nva dev` to start develop server
+6. run `npm run lint` to lint source code
+7. run `npm test` to run tests
 
 Deploy
 ===
@@ -29,7 +31,7 @@ Directory Structure
     |-- vendor.json #third party libraries config
 dist/
     |-- asset/ #images,fonts and so on
-    |-- index/ 
+    |-- index/
         |-- index-[hash].js #dist js come here
         |-- index-[hash].css #dist css come here
         |-- index.html #dist index.html
