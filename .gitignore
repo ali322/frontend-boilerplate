@@ -3,6 +3,7 @@ src/**/build/
 src/**/dist/
 src/__coverage__/
 dist/
+.vscode/
 vendor/
 yarn-error.log
 yarn.lock
