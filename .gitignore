@@ -7,4 +7,5 @@ dist/
 vendor/
 yarn-error.log
 yarn.lock
+npm-debug.log
 .nva/temp/
