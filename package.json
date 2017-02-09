@@ -7,7 +7,19 @@
     "start": "NODE_ENV=develop LISTEN_PORT=2000 node ./task/develop-server.js",
     "release": "webpack --config ./task/webpack.production.js --display-error-details",
     "dll": "webpack --config ./task/webpack.dll.js --display-error-details",
-    "test": "TEST_PORT=8000 karma start ./src/__tests__/karma.config.js && ava"
+    "test": "NODE_ENV=test ava --tap | tap-spec"
+  },
+  "ava": {
+    "files": [
+      "src/__tests__/**/*.js"
+    ],
+    "failFast": true,
+    "powerAssert": false,
+    "require": [
+      "babel-register",
+      "./src/__tests__/helpers/setup-browser-env.js"
+    ],
+    "babel": "inherit"
   },
   "repository": {
     "type": "git",
@@ -29,7 +41,10 @@
     "babel-core": "^6.0.0",
     "babel-preset-latest": "^6.16.0",
     "babel-preset-react": "^6.16.0",
-    "babel-preset-react-optimize": "^1.0.1"
+    "babel-preset-react-optimize": "^1.0.1",
+    "babel-register": "^6.22.0",
+    "browser-env": "^2.0.20",
+    "tap-spec": "^4.1.1"
   },
   "dependencies": {
     "bootstrap": "^3.3.7",
