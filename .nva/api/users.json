@@ -5,8 +5,7 @@
         "code":200,
         "data":[
             {"id":0,"name":"smith"},
-            {"id":1,"name":"jacky"},
-            {"id":2,"name":"tommy"}
+            {"id":1,"name":"jacky"}
         ]
     }
 },
