@@ -1,10 +1,7 @@
 {
     "js":{
-        "vendor":[
-            "jquery","lodash"
-        ],
         "react":[
-            "react","react-dom"
+            "react","react-dom","react-redux","redux-thunk","redux","react-router","axios"
         ]
     },
     "css":{

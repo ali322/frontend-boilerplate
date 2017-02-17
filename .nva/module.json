@@ -4,10 +4,8 @@
       "index.html"
     ],
     "path": "index",
-    "entryJSExt": "index.es6",
-    "entryCSS": "index.styl",
     "vendor": {
-      "js": "vendor",
+      "js": "react",
       "css": "common"
     }
   }
