@@ -1,7 +1,7 @@
 {
     "js":{
-        "react":[
-            "react","react-dom","react-redux","redux-thunk","redux","react-router","axios"
+        "vue":[
+            "vue","vuex","vue-router","axios"
         ]
     },
     "css":{
