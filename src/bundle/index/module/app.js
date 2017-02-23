@@ -1,6 +1,6 @@
 import Vue from 'vue/dist/vue'
 import { mapState, mapActions } from 'vuex'
-import template from './template/index.html'
+import template from './template/index.tpl'
 import actions from './action.es6'
 
 const Events = Vue.component('events', {
@@ -17,7 +17,7 @@ const Events = Vue.component('events', {
         }
     },
     created() {
-        this.handleQuery()
+        this.fetchRepo({repo:this.repo})
     },
     computed: {
         ...mapState({
