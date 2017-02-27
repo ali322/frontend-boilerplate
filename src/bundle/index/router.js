@@ -1,4 +1,4 @@
-import Vue from 'vue/dist/vue'
+import Vue from 'vue'
 import VueRouter from 'vue-router/dist/vue-router'
 import Events from './module/app.js'
 import User from '../user/module/app.vue'
@@ -6,7 +6,7 @@ import User from '../user/module/app.vue'
 Vue.use(VueRouter)
 
 const routes = [
-    { path: '/', component: Events },
+    { path: '/index', component: Events },
     { path: '/user/:user', component: User },
     { path: '*', component: { template: '<div>not found</div>' } }
 ]

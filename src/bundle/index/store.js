@@ -1,5 +1,5 @@
 import Vuex from 'vuex'
-import Vue from 'vue/dist/vue'
+import Vue from 'vue'
 import index from './module'
 import user from '../user/module'
 

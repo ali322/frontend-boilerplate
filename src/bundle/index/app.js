@@ -1,4 +1,4 @@
-import Vue from 'vue/dist/vue'
+import Vue from 'vue'
 import { sync } from 'vuex-router-sync'
 import router from './router'
 import store from './store'

@@ -1,4 +1,4 @@
-import Vue from 'vue/dist/vue'
+import Vue from 'vue'
 import { mapState, mapActions } from 'vuex'
 import template from './template/index.tpl'
 import actions from './action.es6'

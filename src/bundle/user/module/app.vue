@@ -1,5 +1,5 @@
 <script>
-import Vue from 'vue/dist/vue'
+import Vue from 'vue'
 import { mapState, mapActions } from 'vuex'
 import actions from './action.es6'
 
