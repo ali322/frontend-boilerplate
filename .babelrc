@@ -1,12 +1,12 @@
 {
-    "presets": ["latest","react"],
+    "presets": ["latest"],
     "plugins":[
         "transform-class-properties",
         "transform-object-rest-spread"
     ],
     "env": {
     	"production": {
-      		"presets": ["react-optimize"]
+      		"plugins": ["transform-runtime"]
     	}
   	}
 }

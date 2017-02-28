@@ -2,6 +2,8 @@ node_modules/
 src/**/build/
 src/**/dist/
 src/__coverage__/
+__tests__/coverage/
+__tests__/e2e/reports/
 dist/
 .vscode/
 vendor/
@@ -9,3 +11,4 @@ yarn-error.log
 yarn.lock
 npm-debug.log
 .nva/temp/
+selenium-debug.log

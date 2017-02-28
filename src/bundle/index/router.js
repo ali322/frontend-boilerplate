@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router/dist/vue-router'
+import VueRouter from 'vue-router'
 import Events from './module/app.js'
 import User from '../user/module/app.vue'
 
