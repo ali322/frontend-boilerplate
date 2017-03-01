@@ -1,7 +1,7 @@
 import test from "ava"
 
-import eventsReducer from "../../src/bundle/index/module/reducer.es6"
-import * as constants from "../../src/bundle/index/module/constant.es6"
+import eventsReducer from "../../../src/bundle/index/module/reducer.es6"
+import * as constants from "../../../src/bundle/index/module/constant.es6"
 
 const initialState = { events: [] }
 

@@ -1,8 +1,7 @@
 {
     "parser": "babel-eslint",
     "extends": [
-      "airbnb",
-      "plugin:css-modules/recommended"
+      "airbnb"
     ],
     "plugins": [
       "css-modules"

@@ -4,7 +4,7 @@ import Index from './module/app.jsx'
 import User from '../user/module/app.jsx'
 
 const routes = (
-    <Route path="/page/index">
+    <Route path="/index">
         <IndexRoute component={Index} />
         <Route path="/user/:user" component={User} />
     </Route>

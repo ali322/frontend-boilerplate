@@ -1,10 +1,8 @@
 node_modules/
-src/**/build/
-src/**/dist/
-src/__coverage__/
 dist/
 .vscode/
-vendor/
+__tests__/unit/coverage/
+__tests__/e2e/reports/
 yarn-error.log
 yarn.lock
 npm-debug.log
