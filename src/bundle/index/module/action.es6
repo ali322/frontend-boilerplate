@@ -18,7 +18,7 @@ const actions = {
         dispatch("requestRepo", param)
         return axios.get(`https://api.github.com/events`).then(ret => {
             dispatch('responseRepo', ret.data)
-        }).catch(err => dispatch('failResponse', err))
+        })
     }
 }
 

@@ -12,7 +12,7 @@
                 <div class="event-title">
                     <img :src="event.actor.avatar_url" alt="" />
                     <span>
-                    <p><router-link :to="`/user/${event.actor.display_login}`">{{event.actor.display_login}}</router-link></p>
+                    <p><router-link v-bind:to="{path:'/user/' + event.actor.display_login}">{{event.actor.display_login}}</router-link></p>
                     <p>{{event.created_at}}</p>
                     </span>
                 </div>

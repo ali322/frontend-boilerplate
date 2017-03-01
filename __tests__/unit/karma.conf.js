@@ -1,20 +1,20 @@
-let webpackConfig = require('./fixture/webpack.test')
+let webpackConfig = require('./webpack.test')
 
 /* eslint-disable func-names */
-module.exports = function (config) {
+module.exports = function(config) {
     config.set({
         basePath: '',
         frameworks: ['mocha', 'sinon-chai'],
         files: [
-            './fixture/index.js'
+            './fixture/setup.js'
         ],
         exclude: [],
         preprocessors: {
-            "./fixture/index.js": ['webpack', 'sourcemap']
+            "./fixture/setup.js": ['webpack', 'sourcemap']
         },
         webpack: webpackConfig,
         webpackMiddleware: {
-            noinfo: true
+            stats: 'errors-only'
         },
         coverageReporter: {
             dir: './coverage',
@@ -27,9 +27,13 @@ module.exports = function (config) {
         port: 9876,
         colors: true,
         logLevel: config.LOG_INFO,
-        autoWatch: false,
+        autoWatch: true,
         browsers: ['PhantomJS'],
-        singleRun: true,
-        concurrency: Infinity
+        singleRun: false,
+        concurrency: Infinity,
+        captureTimeout: 60000,
+        browserDisconnectTimeout: 10000,
+        browserDisconnectTolerance: 1,
+        browserNoActivityTimeout: 60000 //by default 10000
     })
 }

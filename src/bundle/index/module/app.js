@@ -3,9 +3,8 @@ import { mapState, mapActions } from 'vuex'
 import template from './template/index.tpl'
 import actions from './action.es6'
 
-const Events = Vue.component('events', {
+export const proto = {
     methods: {
-        ...mapActions(Object.keys(actions)),
         handleChange(e) {
             e && e.preventDefault()
             this.changeField({ name: "repo", value: e.target.value });
@@ -17,16 +16,25 @@ const Events = Vue.component('events', {
         }
     },
     created() {
-        this.fetchRepo({repo:this.repo})
+        this.fetchRepo({ repo: this.repo })
     },
-    computed: {
+    template
+}
+
+const Events = Vue.component('events',{
+    ...proto,
+    methods:{
+        ...proto.methods,
+        ...mapActions(Object.keys(actions)),
+    },
+    computed:{
+        ...proto.computed,
         ...mapState({
             repo: state => state.index.repo,
             events: state => state.index.events,
             route: "route"
         })
-    },
-    template
+    }
 })
 
 export default Events
