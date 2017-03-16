@@ -1,8 +1,8 @@
 node_modules/
 dist/
 .vscode/
-__tests__/unit/coverage/
-__tests__/e2e/reports/
+test/unit/coverage/
+test/e2e/reports/
 yarn-error.log
 yarn.lock
 npm-debug.log

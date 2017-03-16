@@ -6,20 +6,20 @@
   "scripts": {
     "start": "static dist",
     "test": "NODE_ENV=test ava --tap | tap-spec",
-    "e2e": "node ./__tests__/e2e/runner.js --config ./__tests__/e2e/nightwatch.conf.js --env chrome",
+    "e2e": "node ./test/e2e/runner.js --config ./test/e2e/nightwatch.conf.js --env chrome",
     "lint:js": "eslint src",
     "lint:css": "stylelint \"src/**/*.{css,less,scss,styl}\"",
     "lint": "npm run lint:js && npm run lint:css"
   },
   "ava": {
     "files": [
-      "__tests__/unit/**/*.js"
+      "test/unit/**/*.js"
     ],
     "failFast": true,
     "powerAssert": false,
     "require": [
       "babel-register",
-      "./__tests__/unit/helpers/setup-browser-env.js"
+      "./test/unit/helpers/setup-browser-env.js"
     ],
     "babel": "inherit"
   },
