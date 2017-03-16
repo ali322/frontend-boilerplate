@@ -2,9 +2,9 @@ require('babel-register')
 
 /* eslint-disable no-trailing-spaces*/
 module.exports = {
-    src_folders: ['__tests__/e2e/spec'],
-    output_folder: '__tests__/e2e/reports',
-    globals_path: '__tests__/e2e/global.js',
+    src_folders: ['test/e2e/spec'],
+    output_folder: 'test/e2e/reports',
+    globals_path: 'test/e2e/global.js',
 
     selenium: {
         start_process: true,

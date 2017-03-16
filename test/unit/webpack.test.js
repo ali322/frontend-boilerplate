@@ -9,7 +9,7 @@ module.exports = {
         rules: [{
                 test: /\.(js|es6)/,
                 loader: 'babel-loader',
-                include: [resolve('__tests__/unit/spec'), resolve('__tests__/unit/fixture'), resolve('src')]
+                include: [resolve('test/unit/spec'), resolve('test/unit/fixture'), resolve('src')]
             },
             {
                 test: /\.(tpl|html)/,

@@ -6,7 +6,7 @@ process.env.NODE_ENV = 'testing'
 /* eslint-disable */
 let opts = process.argv.slice(2)
 if (opts.indexOf('--config') === -1) {
-    opts = opts.concat(['--config', './__tests__/e2e/runner.js'])
+    opts = opts.concat(['--config', './test/e2e/runner.js'])
 }
 if (opts.indexOf('--env') === -1) {
     opts = opts.concat(['--env', 'chrome'])
