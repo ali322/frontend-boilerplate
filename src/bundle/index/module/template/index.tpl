@@ -7,6 +7,7 @@
                 <span class="input-group-addon" @click="handleQuery"><i class="fa fa-search" /></span>
             </div>
         </div>
+        <div class="search-icon"></div>
         <div class="events">
             <div class="event" v-for="event in events" key={event.id}>
                 <div class="event-title">
