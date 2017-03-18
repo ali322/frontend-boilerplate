@@ -8,5 +8,15 @@
       "js": "vue",
       "css": "common"
     }
+  },
+  "user": {
+    "html": [
+      "user.html"
+    ],
+    "path": "user",
+    "vendor": {
+      "js": "vue",
+      "css": "common"
+    }
   }
 }

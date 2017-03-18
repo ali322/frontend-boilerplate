@@ -21,18 +21,17 @@ export const proto = {
     template
 }
 
-const Events = Vue.component('events',{
+const Events = Vue.component('events', {
     ...proto,
-    methods:{
+    methods: {
         ...proto.methods,
         ...mapActions(Object.keys(actions)),
     },
-    computed:{
+    computed: {
         ...proto.computed,
         ...mapState({
             repo: state => state.index.repo,
-            events: state => state.index.events,
-            route: "route"
+            events: state => state.index.events
         })
     }
 })

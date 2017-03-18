@@ -11,18 +11,6 @@
     "lint:css": "stylelint \"src/**/*.{css,less,scss,styl}\"",
     "lint": "npm run lint:js && npm run lint:css"
   },
-  "ava": {
-    "files": [
-      "test/**/*.js"
-    ],
-    "failFast": true,
-    "powerAssert": false,
-    "require": [
-      "babel-register",
-      "./test/helpers/setup-browser-env.js"
-    ],
-    "babel": "inherit"
-  },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/ali322/frontend-boilerplate.git"
@@ -56,6 +44,8 @@
     "eslint-config-airbnb": "^14.1.0",
     "eslint-plugin-css-modules": "^2.2.0",
     "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.0",
     "html-loader": "^0.4.5",
     "karma": "^1.5.0",
     "karma-chai": "^0.1.0",

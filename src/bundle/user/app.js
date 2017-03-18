@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import store from './store'
-import app from './module/app'
+import app from './module/app.vue'
 
 let container = Vue.component('container', {
-    template: `<main><events /></main>`
+    template: `<main><user /></main>`
 })
 
 export default new Vue({
@@ -12,4 +12,3 @@ export default new Vue({
         return h('div', { attrs: { id: 'app' } }, [h('container')])
     }
 })
-

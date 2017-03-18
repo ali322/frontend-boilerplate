@@ -3,7 +3,7 @@ import Vue from 'vue'
 import { mapState, mapActions } from 'vuex'
 import actions from './action.es6'
 
-export default Vue.component('User',{
+export default Vue.component('user',{
     computed:{
         ...mapState({
             user:state=>state.user.user,
@@ -14,7 +14,7 @@ export default Vue.component('User',{
         ...mapActions(Object.keys(actions))
     },
     created(){
-        this.fetchUser(this.route.params)
+        this.fetchUser('yetti')
     }
 })
 </script>
