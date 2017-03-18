@@ -11,18 +11,18 @@ export class User extends Component {
     }
     componentDidMount() {
         const { fetchUser } = this.props.actions
-        const { user } = this.props.params
+        let user = 'yetti'
         fetchUser({ user })
     }
     render() {
-        const { user, history } = this.props
+        const { user } = this.props
         if (!user) {
             return null
         }
         return (
             <div className="common-container">
                 <div className="panel panel-default">
-                <div className="panel-heading common-header"><button className="back-button" onClick={history.goBack}>&lt;</button>{user.id}</div>
+                <div className="panel-heading common-header"><button className="back-button" onClick={history.back}>&lt;</button>{user.id}</div>
                 <div className="panel-body">
                     <div className="user-title">
                     <img src={user.avatar_url} alt="" />

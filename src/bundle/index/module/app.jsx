@@ -48,7 +48,7 @@ export class Events extends Component {
                         <div className="event-title">
                             <img src={event.actor.avatar_url} alt="" />
                             <span>
-                            <p><Link to={`/user/${event.actor.display_login}`}>{event.actor.display_login}</Link></p>
+                            <p><a href={`/user/${event.actor.display_login}`}>{event.actor.display_login}</a></p>
                             <p>{event.created_at}</p>
                             </span>
                         </div>
@@ -62,4 +62,4 @@ export class Events extends Component {
     }
 }
 
-export default connected(actions, state => state.eventReducer)(Events)
+export default connected(actions, state => state.eventsReducer)(Events)
