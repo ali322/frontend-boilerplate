@@ -4,7 +4,7 @@
   "description": "frontend project boilerplate",
   "main": "gulpfile.js",
   "scripts": {
-    "start": "static dist",
+    "start": "nva-server -P dist",
     "test": "NODE_ENV=test karma start ./test/unit/karma.conf.js",
     "e2e": "node ./test/e2e/runner.js --config ./test/e2e/nightwatch.conf.js --env chrome",
     "lint:js": "eslint src",
@@ -61,6 +61,7 @@
     "nib": "^1.1.2",
     "nightwatch": "^0.9.12",
     "node-static": "^0.7.9",
+    "nva-server": "^0.1.69",
     "selenium-server": "^3.0.1",
     "sinon": "^2.0.0-pre.6",
     "sinon-chai": "^2.8.0",
