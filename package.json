@@ -4,7 +4,7 @@
   "description": "frontend project boilerplate",
   "main": "gulpfile.js",
   "scripts": {
-    "start": "nva-server -P dist -A dist",
+    "start": "static dist",
     "test": "NODE_ENV=test ava --tap | tap-spec",
     "e2e": "node ./test/e2e/runner.js --config ./test/e2e/nightwatch.conf.js --env chrome",
     "lint:js": "eslint src",

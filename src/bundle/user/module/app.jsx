@@ -6,8 +6,7 @@ export class User extends Component {
     static propTypes = {
         actions: React.PropTypes.object,
         params: React.PropTypes.object,
-        user: React.PropTypes.object,
-        history: React.PropTypes.object
+        user: React.PropTypes.object
     }
     componentDidMount() {
         const { fetchUser } = this.props.actions
@@ -22,7 +21,7 @@ export class User extends Component {
         return (
             <div className="common-container">
                 <div className="panel panel-default">
-                <div className="panel-heading common-header"><button className="back-button" onClick={history.back}>&lt;</button>{user.id}</div>
+                <div className="panel-heading common-header"><button className="back-button" onClick={()=>window.history.back()}>&lt;</button>{user.id}</div>
                 <div className="panel-body">
                     <div className="user-title">
                     <img src={user.avatar_url} alt="" />
