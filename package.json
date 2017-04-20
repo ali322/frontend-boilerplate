@@ -4,7 +4,7 @@
   "description": "frontend project boilerplate",
   "main": "gulpfile.js",
   "scripts": {
-    "start": "static dist",
+    "start": "nva-server -P dist -A dist",
     "test": "NODE_ENV=test ava --tap | tap-spec",
     "e2e": "node ./test/e2e/runner.js --config ./test/e2e/nightwatch.conf.js --env chrome",
     "lint:js": "eslint src",
@@ -60,7 +60,7 @@
     "eslint-plugin-react": "^6.9.0",
     "nightwatch": "^0.9.12",
     "nock": "^9.0.6",
-    "nva-server": "^0.1.73",
+    "nva-server": "^0.1.75",
     "react-addons-test-utils": "^15.4.2",
     "redux-mock-store": "^1.2.2",
     "selenium-server": "^3.1.0",
