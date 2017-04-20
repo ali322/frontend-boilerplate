@@ -60,7 +60,7 @@
     "moxios": "^0.3.0",
     "nib": "^1.1.2",
     "nightwatch": "^0.9.12",
-    "nva-server": "^0.1.73",
+    "nva-server": "^0.1.76",
     "selenium-server": "^3.0.1",
     "sinon": "^2.0.0-pre.6",
     "sinon-chai": "^2.8.0",

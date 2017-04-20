@@ -11,7 +11,10 @@ export default Vue.component('user',{
         })
     },
     methods:{
-        ...mapActions(Object.keys(actions))
+        ...mapActions(Object.keys(actions)),
+        goBack(){
+            window.history.back()
+        }
     },
     created(){
         this.fetchUser('yetti')
@@ -22,7 +25,7 @@ export default Vue.component('user',{
 <template>
 <div class="common-container">
     <div class="panel panel-default">
-    <div class="panel-heading common-header"><button class="back-button" @click="$router.back()">&lt;</button>{{user.id}}</div>
+    <div class="panel-heading common-header"><button class="back-button" @click="goBack()">&lt;</button>{{user.id}}</div>
     <div class="panel-body">
         <div class="user-title">
         <img :src="user.avatar_url" alt="" />
