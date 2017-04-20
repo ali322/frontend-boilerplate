@@ -60,7 +60,7 @@
     "eslint-plugin-react": "^6.9.0",
     "nightwatch": "^0.9.12",
     "nock": "^9.0.6",
-    "nva-server": "^0.1.73",
+    "nva-server": "^0.1.75",
     "react-addons-test-utils": "^15.4.2",
     "redux-mock-store": "^1.2.2",
     "selenium-server": "^3.1.0",
