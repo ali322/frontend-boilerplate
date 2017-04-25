@@ -35,3 +35,11 @@ export default Vue.component('User',{
     </div>
 </div>
 </template>
+<style lang='scss' scoped>
+    .common-container {
+        background: #FFF;
+        .user-title {
+            background: #FFF;
+        }
+    }
+</style>
