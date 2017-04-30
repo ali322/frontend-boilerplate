@@ -10,6 +10,7 @@ export default {
     type: "frontend",
     spa: true,
     entryJSExt: ".js",
+    mockPath: '.nva/api',
     entryCSSExt: ".styl",
     beforeDev(config) {
         return baseConf
