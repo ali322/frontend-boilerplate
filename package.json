@@ -2,7 +2,6 @@
   "name": "frontend-boilerplate",
   "version": "0.1.0",
   "description": "frontend project boilerplate",
-  "main": "gulpfile.js",
   "scripts": {
     "start": "nva-server -P dist -A dist",
     "test": "NODE_ENV=test karma start ./test/unit/karma.conf.js",

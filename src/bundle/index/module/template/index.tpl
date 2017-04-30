@@ -10,7 +10,6 @@
         <div class="events">
             <div class="event" v-for="event in events" key={event.id}>
                 <div class="event-title">
-                    <img :src="event.actor.avatar_url" alt="" />
                     <span>
                     <p><a v-bind:href="'/user/user.html?name=' + event.actor.display_login">{{event.actor.display_login}}</a></p>
                     <p>{{event.created_at}}</p>
