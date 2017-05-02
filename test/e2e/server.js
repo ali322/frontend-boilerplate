@@ -1,12 +1,11 @@
-let nodeStatic = require('node-static')
+let nvaServer = require('nva-server')
 let http = require('http')
 
-let file = new nodeStatic.Server('dist')
+let app = nvaServer({
+    path: 'dist',
+    asset: 'dist'
+})
 
-let server = http.createServer((req,res)=>{
-    req.addListener('end',()=>{
-        file.serve(req,res)
-    }).resume()
-}).listen(8080)
+let server = http.createServer(app).listen(8080)
 
 module.exports = server

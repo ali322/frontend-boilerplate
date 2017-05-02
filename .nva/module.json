@@ -4,7 +4,7 @@
       "index.html"
     ],
     "path": "index",
-    "htmlOutput":"dist",
+    "htmlOutput": "dist",
     "vendor": {
       "js": "vue",
       "css": "common"
