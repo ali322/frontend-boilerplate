@@ -5,5 +5,9 @@
     "globals": {
         "sinon": true,
         "expect": true
+    },
+    "rules": {
+        "no-plusplus":"off",
+        "import/no-unresolved":"off"
     }
 }

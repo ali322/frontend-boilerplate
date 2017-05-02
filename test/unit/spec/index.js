@@ -44,21 +44,21 @@ describe("actions", () => {
 })
 
 describe("component", () => {
-    beforeEach(()=>{
+    beforeEach(() => {
         Vue.use(VueRouter)
     })
     it('index route', () => {
         const fetchRepo = sinon.spy()
-        const rendered = renderedText({...proto,
-            data:()=>{
+        const rendered = renderedText({ ...proto,
+            data: () => {
                 return {
-                    ...(proto.data?proto.data():{}),
-                    repo:'',
-                    events:[],
+                    ...(proto.data ? proto.data() : {}),
+                    repo: '',
+                    events: [],
                     fetchRepo,
                 }
             }
-        }, { })
+        }, {})
 
         expect(fetchRepo.callCount).to.equal(1)
     })

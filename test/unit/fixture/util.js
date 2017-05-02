@@ -26,8 +26,8 @@ export function testAction(action, args, state, actions, expectedMutations, done
     }
 }
 
-export function renderedText(component,propsData){
+export function renderedText(component, propsData) {
     const Ctor = Vue.extend(component)
-    const vm = new Ctor({propsData}).$mount()
+    const vm = new Ctor({ propsData }).$mount()
     return vm.$el.textContent
 }

@@ -6,7 +6,7 @@ const baseConf = {
     }
 }
 
-export default {
+module.exports = {
     type: "frontend",
     entryJSExt: ".js",
     mockPath: '.nva/api',
