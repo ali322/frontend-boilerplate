@@ -1,4 +1,4 @@
-export default {
+module.exports = {
     "type": "frontend",
     "spa": true,
     "entryJSExt": ".jsx",
