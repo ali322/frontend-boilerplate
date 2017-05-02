@@ -28,8 +28,7 @@
   },
   "keywords": [
     "frontend",
-    "webpack",
-    "gulp"
+    "webpack"
   ],
   "author": "alichen",
   "license": "MIT",
@@ -57,12 +56,13 @@
     "nock": "^9.0.6",
     "nva-server": "^0.1.81",
     "react-addons-test-utils": "^15.4.2",
-    "react-hot-loader": "^1.3.1",
+    "react-hot-loader": "^3.0.0-beta.6",
     "redux-mock-store": "^1.2.2",
     "sinon": "^1.17.7",
     "stylelint": "^7.8.0",
     "stylelint-config-standard": "^16.0.0",
-    "tap-spec": "^4.1.1"
+    "tap-spec": "^4.1.1",
+    "webpack": "^2.4.1"
   },
   "dependencies": {
     "axios": "^0.15.3",
