@@ -4,8 +4,8 @@
   "description": "frontend project boilerplate",
   "scripts": {
     "start": "nva-server -P dist -A dist",
-    "test": "NODE_ENV=test karma start ./test/unit/karma.conf.js",
-    "e2e": "node ./test/e2e/runner.js --config ./test/e2e/nightwatch.conf.js --env chrome",
+    "test": "nva test",
+    "e2e": "nva test --e2e -r test/e2e/server.js",
     "lint:js": "eslint src",
     "lint:css": "stylelint \"src/**/*.{css,less,scss,styl}\"",
     "lint": "npm run lint:js && npm run lint:css"
