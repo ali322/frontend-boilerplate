@@ -6,7 +6,7 @@ import routes from './routes.jsx'
 
 const App = app()(Router)
 if (module.hot) {
-  module.hot.accept()
+    module.hot.accept()
 }
 match({ history: browserHistory, routes }, (err, redirectLocation, renderProps) => {
     render(<App {...renderProps} history={browserHistory} />, document.getElementById('app'))
