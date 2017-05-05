@@ -16,8 +16,7 @@
   },
   "keywords": [
     "frontend",
-    "webpack",
-    "gulp"
+    "webpack"
   ],
   "author": "alichen",
   "license": "MIT",
@@ -44,7 +43,7 @@
     "html-loader": "^0.4.5",
     "moxios": "^0.3.0",
     "nib": "^1.1.2",
-    "nva-server": "^0.1.81",
+    "nva-server": "^0.2.26",
     "sinon": "^2.1.0",
     "stylelint": "^7.8.0",
     "stylelint-config-standard": "^16.0.0",
