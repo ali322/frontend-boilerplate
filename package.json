@@ -44,7 +44,7 @@
     "moxios": "^0.3.0",
     "nib": "^1.1.2",
     "node-sass": "^4.5.2",
-    "nva-server": "^0.1.76",
+    "nva-server": "^0.2.26",
     "resolve-url-loader": "^2.0.2",
     "sass-loader": "^6.0.3",
     "sinon": "^2.0.0-pre.6",
