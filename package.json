@@ -58,7 +58,7 @@
         "eslint-plugin-jsx-a11y": "^4.0.0",
         "eslint-plugin-react": "^6.9.0",
         "nock": "^9.0.6",
-        "nva-server": "^0.1.81",
+        "nva-server": "^0.2.26",
         "react-addons-test-utils": "^15.4.2",
         "redux-mock-store": "^1.2.2",
         "sinon": "^1.17.7",
