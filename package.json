@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "frontend project boilerplate",
   "scripts": {
-    "start": "nva-server -P dist -A dist",
+    "start": "nva-server -P dist -A dist --index /index/index.html",
     "test": "nva test",
     "e2e": "nva test --e2e -r test/e2e/server.js",
     "lint:js": "eslint src",
