@@ -10,7 +10,7 @@ module.exports = {
     type: "frontend",
     spa: true,
     entryJSExt: ".js",
-    mockPath: '.nva/api',
+    mockConf: './api/',
     entryCSSExt: ".styl",
     beforeDev(config) {
         return baseConf
