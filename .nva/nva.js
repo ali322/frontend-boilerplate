@@ -9,7 +9,7 @@ const baseConf = {
 module.exports = {
     type: "frontend",
     entryJSExt: ".js",
-    mockPath: '.nva/api',
+    mockConf: '.nva/api',
     entryCSSExt: ".styl",
     beforeDev(config) {
         return baseConf
