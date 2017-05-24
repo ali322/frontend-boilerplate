@@ -1,13 +1,13 @@
 import React from 'react'
-import { Route, IndexRoute } from 'react-router'
+import { Route, BrowserRouter as Router } from 'react-router-dom'
 import Index from './module/app.jsx'
-import User from '../user/module/app.jsx'
+import Detail from '../detail/module/app.jsx'
 
-const routes = (
-    <Route path="/">
-        <IndexRoute component={Index} />
-        <Route path="/user/:user" component={User} />
-    </Route>
+export default () => (
+    <Router>
+        <div>
+            <Route component={Index} path="/" exact />
+            <Route component={Detail} path="/event/:id" />
+        </div>
+    </Router>
 )
-
-export default routes

@@ -1,3 +1,3 @@
-let users = require('./users')
+let event = require('./event')
 
-module.exports = [].concat(users)
+module.exports = [].concat(event)

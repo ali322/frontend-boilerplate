@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux'
-import eventReducer from './module/reducer.es6'
-import userReducer from '../user/module/reducer.es6'
+import eventReducer from './module/reducer'
+import detailReducer from '../detail/module/reducer'
 
 const rootReducer = combineReducers({
     eventReducer,
-    userReducer
+    detailReducer
 })
 
 export default rootReducer

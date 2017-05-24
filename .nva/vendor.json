@@ -1,12 +1,12 @@
 {
-    "js":{
-        "react":[
-            "react","react-dom","react-redux","redux-thunk","redux","react-router","axios"
+    "js": {
+        "react": [
+            "react", "react-dom", "prop-types", "redux", "react-router-dom", "axios"
         ]
     },
-    "css":{
-        "common":[
-            "bootstrap/dist/css/bootstrap.css",
+    "css": {
+        "common": [
+            "normalize.css",
             "font-awesome/css/font-awesome.css"
         ]
     }
