@@ -1,81 +1,82 @@
 {
-    "name": "frontend-boilerplate",
-    "version": "0.1.0",
-    "description": "frontend project boilerplate",
-    "scripts": {
-        "start": "nva-server -P dist -A dist --index /index/index.html",
-        "test": "BABEL_ENV=test ava --tap | tap-spec",
-        "e2e": "nva test --e2e -r test/e2e/server.js",
-        "lint:js": "eslint src",
-        "lint:css": "stylelint \"src/**/*.{css,less,scss,styl}\"",
-        "lint": "npm run lint:js && npm run lint:css"
-    },
-    "ava": {
-        "files": [
-            "test/unit/spec/**/*.js"
-        ],
-        "failFast": true,
-        "powerAssert": false,
-        "require": [
-            "babel-register",
-            "./test/unit/helpers/setup-browser-env.js"
-        ],
-        "babel": "inherit"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+ssh://git@github.com/ali322/frontend-boilerplate.git"
-    },
-    "keywords": [
-        "frontend",
-        "webpack",
-        "gulp"
+  "name": "frontend-boilerplate",
+  "version": "0.1.0",
+  "description": "frontend project boilerplate",
+  "scripts": {
+    "start": "nva-server -P dist -A dist --index /index/index.html",
+    "test": "BABEL_ENV=test ava --tap | tap-spec",
+    "e2e": "nva test --e2e -r test/e2e/server.js",
+    "lint:js": "eslint src",
+    "lint:css": "stylelint \"src/**/*.{css,less,scss,styl}\"",
+    "lint": "npm run lint:js && npm run lint:css"
+  },
+  "ava": {
+    "files": [
+      "test/unit/spec/**/*.js"
     ],
-    "author": "alichen",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/ali322/frontend-boilerplate/issues"
-    },
-    "homepage": "https://github.com/ali322/frontend-boilerplate#readme",
-    "devDependencies": {
-        "ava": "^0.19.1",
-        "babel-core": "^6.0.0",
-        "babel-eslint": "^7.1.1",
-        "babel-plugin-transform-class-properties": "^6.23.0",
-        "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
-        "babel-plugin-transform-object-rest-spread": "^6.23.0",
-        "babel-preset-es2015": "^6.24.1",
-        "babel-preset-react": "^6.16.0",
-        "babel-preset-react-optimize": "^1.0.1",
-        "babel-preset-stage-2": "^6.24.1",
-        "babel-register": "^6.24.1",
-        "browser-env": "^2.0.20",
-        "enzyme": "^2.7.1",
-        "eslint": "^3.15.0",
-        "eslint-config-airbnb": "^14.1.0",
-        "eslint-plugin-css-modules": "^2.2.0",
-        "eslint-plugin-import": "^2.2.0",
-        "eslint-plugin-jsx-a11y": "^4.0.0",
-        "eslint-plugin-react": "^6.9.0",
-        "nock": "^9.0.6",
-        "nva-server": "^0.2.26",
-        "react-addons-test-utils": "^15.4.2",
-        "redux-mock-store": "^1.2.2",
-        "sinon": "^1.17.7",
-        "stylelint": "^7.8.0",
-        "stylelint-config-standard": "^16.0.0",
-        "tap-spec": "^4.1.1"
-    },
-    "dependencies": {
-        "axios": "^0.15.3",
-        "bootstrap": "^3.3.7",
-        "font-awesome": "^4.7.0",
-        "react": "^15.4.2",
-        "react-dom": "^15.4.2",
-        "react-hot-loader": "^3.0.0-beta.6",
-        "react-router": "^2.8.1",
-        "redux": "^3.6.0",
-        "redux-container": "^1.0.26",
-        "redux-thunk": "^2.1.0"
-    }
+    "failFast": true,
+    "powerAssert": false,
+    "require": [
+      "babel-register",
+      "./test/unit/helpers/setup-browser-env.js"
+    ],
+    "babel": "inherit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ali322/frontend-boilerplate.git"
+  },
+  "keywords": [
+    "frontend",
+    "webpack",
+    "gulp"
+  ],
+  "author": "alichen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ali322/frontend-boilerplate/issues"
+  },
+  "homepage": "https://github.com/ali322/frontend-boilerplate#readme",
+  "devDependencies": {
+    "ava": "^0.19.1",
+    "babel-core": "^6.0.0",
+    "babel-eslint": "^7.1.1",
+    "babel-plugin-transform-class-properties": "^6.23.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-react-optimize": "^1.0.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-register": "^6.24.1",
+    "browser-env": "^2.0.20",
+    "enzyme": "^2.7.1",
+    "eslint": "^3.15.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-css-modules": "^2.2.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.9.0",
+    "nock": "^9.0.6",
+    "nva-server": "^0.2.26",
+    "react-addons-test-utils": "^15.4.2",
+    "react-hot-loader": "^3.0.0-beta.6",
+    "redux-mock-store": "^1.2.2",
+    "redux-thunk": "^2.1.0",
+    "sinon": "^1.17.7",
+    "stylelint": "^7.8.0",
+    "stylelint-config-standard": "^16.0.0",
+    "tap-spec": "^4.1.1"
+  },
+  "dependencies": {
+    "autobind-decorator": "^1.4.1",
+    "axios": "^0.15.3",
+    "font-awesome": "^4.7.0",
+    "normalize.css": "^7.0.0",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "redux": "^3.6.0",
+    "redux-container": "^1.0.26"
+  }
 }

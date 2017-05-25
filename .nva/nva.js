@@ -1,6 +1,6 @@
 module.exports = {
     type: "frontend",
-    mockConf: require('./api/'),
+    mockConf: require('./mock'),
     entryJSExt: ".jsx",
     entryCSSExt: ".styl"
 }

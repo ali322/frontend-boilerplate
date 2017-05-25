@@ -1,8 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Index from "./module/container.jsx"
+import App from "./container.jsx"
 
-ReactDOM.render(<Index />,document.getElementById('app'))
+import "../common/responsive"
+
+ReactDOM.render(<App />,document.getElementById('app'))
 
 if (module.hot) {
     module.hot.accept()

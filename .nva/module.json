@@ -9,11 +9,11 @@
       "css": "common"
     }
   },
-  "user": {
+  "detail": {
     "html": [
-      "user.html"
+      "detail.html"
     ],
-    "path": "user",
+    "path": "detail",
     "vendor": {
       "js": "react",
       "css": "common"

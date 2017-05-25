@@ -38,6 +38,7 @@
       "generator-star-spacing": "off",
       "import/extensions": "off",
       "import/no-extraneous-dependencies": "off",
+      "import/prefer-default-export":"off",
       "react/forbid-prop-types": "off",
       "react/jsx-filename-extension": "off",
       "react/no-array-index-key": "off",
