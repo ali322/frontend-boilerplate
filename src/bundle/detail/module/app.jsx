@@ -6,23 +6,20 @@ import * as actions from './action'
 export class Detail extends Component {
     static propTypes = {
         actions: PropTypes.object,
-        match: PropTypes.object,
-        detail: PropTypes.object,
-        history: PropTypes.object
+        detail: PropTypes.object
     }
     componentDidMount() {
         const { fetchDetail } = this.props.actions
-        const { id } = this.props.match.params
-        fetchDetail({ id })
+        fetchDetail({})
     }
     render() {
-        const { detail, history } = this.props
+        const { detail } = this.props
         if (!detail) {
             return null
         }
         return (
             <div className="container">
-                <div className="header header-with-btn"><button className="btn" onClick={history.goBack}><i className="fa fa-arrow-left" /></button>{detail.name}</div>
+                <div className="header header-with-btn"><button className="btn" onClick={()=>window.history.back()}><i className="fa fa-arrow-left" /></button>{detail.name}</div>
                 <div className="content">
                     <div className="detail">
                         <img src={detail.avatar} alt="" />

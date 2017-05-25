@@ -1,8 +1,8 @@
 import { wrapper, configureStore } from 'redux-container'
-import eventReducer from './module/reducer'
+import detailReducer from './module/reducer'
 import App from './module/app.jsx'
 
-const store = configureStore(eventReducer, { events: [], repo: '' })
+const store = configureStore(detailReducer)
 if (module.hot) {
     module.hot.accept('./module/reducer', () => {
         const nextReducer = require('./module/reducer')

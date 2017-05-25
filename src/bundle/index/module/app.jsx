@@ -7,7 +7,6 @@ import * as actions from './action'
 export class Index extends Component {
     static propTypes = {
         actions: PropTypes.object,
-        repo: PropTypes.string,
         events: PropTypes.array
     }
     componentDidMount() {
@@ -29,7 +28,7 @@ export class Index extends Component {
                 <div className="content">
                     {events.map(event=>(
                         <div className="event" key={event.id}>
-                            <a href={`/event/${event.id}`}>
+                            <a href={`/detail/detail.html?id=${event.id}`}>
                             <div className="event-title">
                                 <img src={event.avatar} alt="" />
                                 <span>

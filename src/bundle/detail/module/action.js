@@ -11,8 +11,7 @@ function requestDetail(param) {
 function responseDetail(payload) {
     return {
         type: constants.RESPONSE_DETAIL,
-        payload,
-        respondAt: Date.now()
+        payload
     }
 }
 
