@@ -9,7 +9,7 @@ const baseConf = {
 module.exports = {
     type: "frontend",
     entryJSExt: ".js",
-    mockConf: require('./api/'),
+    mockConf: require('./mock'),
     entryCSSExt: ".styl",
     beforeDev(config) {
         return baseConf
