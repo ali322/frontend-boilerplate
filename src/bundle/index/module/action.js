@@ -10,8 +10,7 @@ function requestEvents() {
 function responseEvents(payload) {
     return {
         type: constants.RESPONSE_EVENTS,
-        payload,
-        respondAt: Date.now()
+        payload
     }
 }
 
