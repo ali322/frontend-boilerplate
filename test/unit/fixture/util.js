@@ -26,7 +26,7 @@ export function testAction(action, args, state, actions, expectedMutations, done
     }
 }
 
-export function createEl() {
+function createEl() {
     const el = document.createElement('div')
     const id = Math.random().toString(36).slice(2)
     el.id = `test-${id}`

@@ -24,6 +24,7 @@
       "comma-dangle":"off",
       "eol-last":"off",
       "no-unused-expressions":"off",
+      "no-unused-vars":"off",
       "react/jsx-indent":"off",
       "no-case-declarations":"off",
       "no-use-before-define":"off",

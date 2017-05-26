@@ -1,14 +1,13 @@
 let { resolve } = require('path')
+
 let webpackConf = {
     resolve: {
         alias: {
-            'taurus': resolve('src/index.js')
+            '@': resolve('src', 'bundle')
         }
     }
 }
 
 module.exports = {
-    entry: resolve('test','unit', 'fixture', 'setup.js'),
-    reportFolder: resolve('test','unit', 'coverage'),
     webpack: webpackConf
 }
