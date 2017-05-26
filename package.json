@@ -42,8 +42,6 @@
     "eslint-plugin-import": "^2.2.0",
     "html-loader": "^0.4.5",
     "moxios": "^0.3.0",
-    "nib": "^1.1.2",
-    "nock": "^9.0.13",
     "nva-server": "^0.2.26",
     "nva-test": "^0.2.42",
     "sinon": "^2.1.0",
