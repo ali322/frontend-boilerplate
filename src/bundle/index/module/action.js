@@ -12,7 +12,6 @@ export function responseEvents({ commit }, payload) {
 export function fetchEvents({ commit, dispatch }, param) {
     dispatch('requestEvents')
     axios.get('/mock/events').then(ret => {
-        console.log('ret',ret)
         ret = ret.data
         dispatch('responseEvents', ret.data)
     }).catch(err=>console.log('err',err))
