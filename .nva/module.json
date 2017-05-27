@@ -6,8 +6,8 @@
     "path": "index",
     "htmlOutput": "dist",
     "vendor": {
-      "js": "vue",
-      "css": "common"
+      "js": "base",
+      "css": "base"
     }
   }
 }
