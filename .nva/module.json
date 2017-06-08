@@ -1,13 +1,11 @@
 {
-  "index": {
-    "html": [
-      "index.html"
-    ],
-    "path": "index",
-    "htmlOutput": "dist",
-    "vendor": {
-      "js": "base",
-      "css": "base"
+    "index": {
+        "output": {
+            "html": "dist/index.html"
+        },
+        "vendor": {
+            "js": "base",
+            "css": "base"
+        }
     }
-  }
 }

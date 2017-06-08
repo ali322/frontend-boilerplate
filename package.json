@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "description": "frontend project boilerplate",
   "scripts": {
-    "start": "nva-server -P dist -A dist --rewrites",
-    "test": "nva test -c test/unit/fixture/conf.js",
-    "e2e": "nva test --e2e -r test/e2e/server.js",
+    "start": "nva-server -P dist -A dist --rewrites --mock .nva/mock",
+    "test": "nva-test -c test/unit/fixture/conf.js",
+    "test:e2e": "nva-test-e2e -r test/e2e/server.js",
     "lint:js": "eslint src",
     "lint:css": "stylelint \"src/**/*.{css,less,scss,styl}\"",
     "lint": "npm run lint:js && npm run lint:css"
@@ -43,7 +43,8 @@
     "eslint-plugin-import": "^2.2.0",
     "moxios": "^0.3.0",
     "node-sass": "^4.5.2",
-    "nva-server": "^0.2.26",
+    "nva-server": "^0.3.10",
+    "nva-test": "^0.3.10",
     "resolve-url-loader": "^2.0.2",
     "sass-loader": "^6.0.3",
     "sinon": "^2.0.0-pre.6",

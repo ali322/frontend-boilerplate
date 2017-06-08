@@ -1,17 +1,21 @@
 const baseConf = {
     resolve: {
         alias: {
-            'vue': 'vue/dist/vue.esm.js'
+            'vue': 'vue/dist/vue.esm.js',
+            "vue-router": 'vue-router/dist/vue-router.esm.js'
         }
     }
 }
 
 module.exports = {
     type: "frontend",
-    spa: true,
-    entryJSExt: ".js",
-    mockConf: require('./mock'),
-    entryCSSExt: ".styl",
+    spa: [{
+        from: /\/(\S+)?$/,
+        to: '/index/index.html'
+    }],
+    jsExt: ".js",
+    mock: require('./mock'),
+    cssExt: ".styl",
     beforeDev(config) {
         return baseConf
     },
