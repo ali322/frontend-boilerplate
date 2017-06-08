@@ -8,9 +8,9 @@ const baseConf = {
 
 module.exports = {
     type: "frontend",
-    entryJSExt: ".js",
-    mockConf: require('./mock'),
-    entryCSSExt: ".styl",
+    jsExt: ".js",
+    mock: require('./mock'),
+    cssExt: ".styl",
     beforeDev(config) {
         return baseConf
     },
