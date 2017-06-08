@@ -1,6 +1,6 @@
 module.exports = {
     type: "frontend",
-    mockConf: require('./mock'),
-    entryJSExt: ".jsx",
-    entryCSSExt: ".styl"
+    mock: require('./mock'),
+    jsExt: ".jsx",
+    cssExt: ".styl"
 }
