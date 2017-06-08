@@ -1,11 +1,11 @@
 {
     "js": {
-        "react": [
+        "base": [
             "react", "react-dom", "prop-types", "redux", "react-router-dom", "axios"
         ]
     },
     "css": {
-        "common": [
+        "base": [
             "normalize.css",
             "font-awesome/css/font-awesome.css"
         ]

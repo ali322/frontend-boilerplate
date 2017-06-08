@@ -1,7 +1,10 @@
 module.exports = {
     type: "frontend",
-    mockConf: require('./api/'),
-    spa: true,
-    entryJSExt: ".jsx",
-    entryCSSExt: ".styl"
+    mock: require('./mock/'),
+    spa: [{
+        from: /\/(\S+)?$/,
+        to: '/index/index.html'
+    }],
+    jsExt: ".jsx",
+    cssExt: ".styl"
 }
