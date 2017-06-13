@@ -11,7 +11,7 @@ module.exports = {
     type: "frontend",
     spa: [{
         from: /\/(\S+)?$/,
-        to: '/index/index.html'
+        to: '/index.html'
     }],
     jsExt: ".js",
     mock: require('./mock'),

@@ -1,5 +1,5 @@
 import app from './container'
-import "../common/responsive"
+import "./common/responsive"
 
 if (module.hot) {
     module.hot.accept()

@@ -1,5 +1,10 @@
 {
     "index": {
+        "input": {
+            "js": "src/index.js",
+            "css": "src/index.styl",
+            "html": "src/index.html"
+        },
         "output": {
             "html": "dist/index.html"
         },
