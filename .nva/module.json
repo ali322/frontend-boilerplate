@@ -1,11 +1,16 @@
 {
-  "index": {
-    "output":{
-        "html":"dist/index.html"
-    },
-    "vendor": {
-      "js": "base",
-      "css": "base"
+    "index": {
+        "input": {
+            "js": "src/index.jsx",
+            "css": "src/index.styl",
+            "html": "src/index.html"
+        },
+        "output": {
+            "html": "dist/index.html"
+        },
+        "vendor": {
+            "js": "base",
+            "css": "base"
+        }
     }
-  }
 }

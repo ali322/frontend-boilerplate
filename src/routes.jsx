@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route, BrowserRouter as Router } from 'react-router-dom'
-import Index from './module/app.jsx'
-import Detail from '../detail/app.jsx'
+import Index from './index/app.jsx'
+import Detail from './detail/app.jsx'
 
 export default () => (
     <Router>
