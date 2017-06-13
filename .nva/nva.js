@@ -9,10 +9,7 @@ const baseConf = {
 
 module.exports = {
     type: "frontend",
-    spa: [{
-        from: /\/(\S+)?$/,
-        to: '/index.html'
-    }],
+    spa: true,
     jsExt: ".js",
     mock: require('./mock'),
     cssExt: ".styl",
