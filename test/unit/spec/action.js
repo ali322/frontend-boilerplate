@@ -2,8 +2,8 @@ import test from "ava"
 import nock from "nock"
 import configureStore from "redux-mock-store"
 import thunkMiddleware from "redux-thunk"
-import * as actions from "../../../src/bundle/index/module/action"
-import * as constants from "../../../src/bundle/index/module/constant"
+import * as actions from "../../../src/index/action"
+import * as constants from "../../../src/index/constant"
 
 let mockStore
 
