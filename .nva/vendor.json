@@ -1,11 +1,11 @@
 {
-    "js":{
-        "base":[
-            "vue","vuex","vue-router","axios"
+    "js": {
+        "base": [
+            "vue", "vuex", "axios"
         ]
     },
-    "css":{
-        "base":[
+    "css": {
+        "base": [
             "normalize.css",
             "font-awesome/css/font-awesome.css"
         ]
