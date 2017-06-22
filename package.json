@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "frontend project boilerplate",
   "scripts": {
-    "start": "nva-server -P dist -A dist --mock .nva/mock/event --index /index/index.html",
+    "start": "nva-server -P dist -A dist --mock .nva/mock/event.json --index /index/index.html",
     "test": "BABEL_ENV=test ava --tap | tap-spec",
     "test:e2e": "nva-test-e2e -r test/e2e/server.js",
     "lint:js": "eslint src",
@@ -59,7 +59,7 @@
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.9.0",
     "nock": "^9.0.6",
-    "nva-server": "^0.3.10",
+    "nva-server": "^0.3.59",
     "react-hot-loader": "^3.0.0-beta.6",
     "react-test-renderer": "^15.5.4",
     "redux-mock-store": "^1.2.2",
