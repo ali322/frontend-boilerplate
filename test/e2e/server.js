@@ -4,7 +4,7 @@ let http = require('http')
 let app = nvaServer({
     path: 'dist',
     asset: 'dist',
-    mock: require('../../.nva/mock')
+    mock: require('../../.nva/mock/event')
 })
 
 let server = http.createServer(app).listen(8080)

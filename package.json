@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "frontend project boilerplate",
   "scripts": {
-    "start": "nva-server -P dist -A dist --mock .nva/mock --index /index/index.html",
+    "start": "nva-server -P dist -A dist --mock .nva/mock/event --index /index/index.html",
     "test": "BABEL_ENV=test ava --tap | tap-spec",
     "test:e2e": "nva-test-e2e -r test/e2e/server.js",
     "lint:js": "eslint src",
