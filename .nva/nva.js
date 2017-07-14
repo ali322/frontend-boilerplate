@@ -1,7 +1,7 @@
 module.exports = {
     type: "frontend",
     spa: true,
-    autocheck: ['axios'],
+    autocheck: ['vue', 'vuex', 'vue-router', 'vuex-router-sync'],
     jsExt: ".js",
     cssExt: ".styl"
 }
