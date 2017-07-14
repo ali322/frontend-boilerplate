@@ -51,7 +51,7 @@
     "vue-template-compiler": "^2.2.1"
   },
   "dependencies": {
-    "axios": "^0.15.3",
+    "axios": "^0.16.2",
     "font-awesome": "^4.7.0",
     "normalize.css": "^7.0.0",
     "vue": "^2.1.10",
