@@ -1,6 +1,7 @@
 [{
         "url": "/mock/events",
         "method": "get",
+        "type": "jsf",
         "response": {
             "type": "object",
             "required": ["status", "data"],
