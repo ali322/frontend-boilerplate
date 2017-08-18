@@ -1,6 +1,7 @@
 [{
         "url": "/mock/events",
         "method": "get",
+        "type": "spa",
         "response": {
             "type": "object",
             "required": ["status", "data"],
