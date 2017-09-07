@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "frontend project boilerplate",
   "scripts": {
-    "start": "nva-server -P dist -A dist --rewrites --mock .nva/mock/*.json",
+    "start": "cd dist && nva-server -P . -A . --rewrites --mock ../.nva/mock/*.json",
     "test": "nva-test -c test/unit/fixture/conf.js",
     "test:e2e": "nva-test-e2e -r test/e2e/server.js",
     "lint:js": "eslint src",
@@ -41,7 +41,7 @@
     "eslint-plugin-css-modules": "^2.2.0",
     "eslint-plugin-import": "^2.2.0",
     "moxios": "^0.3.0",
-    "nva-server": "^0.3.60",
+    "nva-server": "^0.3.122",
     "nva-test": "^0.3.90",
     "sinon": "^2.0.0-pre.6",
     "sinon-chai": "^2.8.0",
