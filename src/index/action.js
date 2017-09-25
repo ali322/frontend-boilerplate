@@ -19,7 +19,6 @@ export function fetchEvents() {
         dispatch(requestEvents())
         return axios.get('/mock/events').then(ret => {
             ret = ret.data
-            console.log('ret', ret)
             dispatch(responseEvents(ret.data))
         })
     }
