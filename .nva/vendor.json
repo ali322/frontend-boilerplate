@@ -1,13 +1,15 @@
 {
-    "js": {
-        "base": [
-            "react", "react-dom", "prop-types", "redux", "react-router-dom", "axios"
-        ]
-    },
-    "css": {
-        "base": [
-            "normalize.css",
-            "font-awesome/css/font-awesome.css"
-        ]
-    }
+  "js": {
+    "base": [
+      "react",
+      "react-dom",
+      "prop-types",
+      "redux",
+      "react-router-dom",
+      "axios"
+    ]
+  },
+  "css": {
+    "base": ["normalize.css", "font-awesome/css/font-awesome.css"]
+  }
 }
