@@ -4,10 +4,10 @@ import App from './module/app.jsx'
 
 const store = configureStore(detailReducer)
 if (module.hot) {
-    module.hot.accept('./module/reducer', () => {
-        const nextReducer = require('./module/reducer')
-        store.replaceReducer(nextReducer)
-    })
+  module.hot.accept('./module/reducer', () => {
+    const nextReducer = require('./module/reducer')
+    store.replaceReducer(nextReducer)
+  })
 }
 
 export default wrapper(store)(App)
