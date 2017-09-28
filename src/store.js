@@ -6,13 +6,13 @@ import detail from './detail/store'
 Vue.use(Vuex)
 
 const modules = {
-    index,
-    detail
+  index,
+  detail
 }
 
 const store = new Vuex.Store({
-    state: {},
-    modules
+  state: {},
+  modules
 })
 
 export default store
