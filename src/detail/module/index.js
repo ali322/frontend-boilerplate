@@ -1,10 +1,10 @@
-import mutations from './mutation'
-import * as actions from './action'
+import mutations from "./mutation"
+import * as actions from "./action"
 
 export default {
-    state: {
-        detail: {}
-    },
-    actions,
-    mutations
+  state: {
+    detail: {}
+  },
+  actions,
+  mutations
 }

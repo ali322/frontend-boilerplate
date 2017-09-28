@@ -1,16 +1,16 @@
-import Vuex from 'vuex'
-import Vue from 'vue'
-import index from './module'
+import Vuex from "vuex"
+import Vue from "vue"
+import index from "./module"
 
 Vue.use(Vuex)
 
 const modules = {
-    index
+  index
 }
 
 const store = new Vuex.Store({
-    state: {},
-    modules
+  state: {},
+  modules
 })
 
 export default store

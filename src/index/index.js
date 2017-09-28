@@ -1,8 +1,8 @@
-import app from './container'
+import app from "./container"
 import "../common/responsive"
 
 if (module.hot) {
-    module.hot.accept()
+  module.hot.accept()
 }
 
-app.$mount('#app')
+app.$mount("#app")

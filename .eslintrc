@@ -1,41 +1,11 @@
 {
-    "parser": "babel-eslint",
-    "extends": "airbnb-base",
-    "plugins": [
-      "css-modules"
-    ],
-    "globals": {
-      "__DEV__": true
-    },
-    "env": {
-      "browser": true
-    },
-    "rules": {
-      "quotes":"off",
-      "one-var-declaration-per-line":"off",
-      "one-var":"off",
-      "indent": "off",
-      "prefer-const":"off",
-      "comma-spacing":"off",
-      "arrow-spacing":"off",
-      "arrow-body-style":"off",
-      "comma-dangle":"off",
-      "eol-last":"off",
-      "no-unused-vars":"off",
-      "no-unused-expressions":"off",
-      "no-case-declarations":"off",
-      "no-use-before-define":"off",
-      "no-shadow":"off",
-      "no-restricted-syntax":"off",
-      "guard-for-in":"off",
-      "no-param-reassign":"off",
-      "class-methods-use-this":"off",
-      "global-require":"off",
-      "semi":"off",
-      "arrow-parens": "off",
-      "generator-star-spacing": "off",
-      "import/prefer-default-export":"off",
-      "import/extensions": "off",
-      "import/no-extraneous-dependencies": "off"
-    }
+  "parser": "babel-eslint",
+  "extends": "standard",
+  "plugins": ["css-modules"],
+  "globals": {
+    "__DEV__": true
+  },
+  "env": {
+    "browser": true
+  }
 }
