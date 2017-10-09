@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "frontend project boilerplate",
   "scripts": {
-    "start": "cd dist && nva-server -P . -A . --mock ../.nva/mock/*.js",
+    "start": "cd dist && nva-server -P . -A . --mock ../.nva/mock/*.js --index /index/",
     "test": "nva-test -c test/unit/fixture/conf.js",
     "test:e2e": "nva-test-e2e -r test/e2e/server.js",
     "lint:js": "eslint src",
