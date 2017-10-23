@@ -5,9 +5,7 @@
     },
     "env": {
         "node":true,
-        "browser": true
-    },
-    "plugins": [
-        "jest"
-    ]
+        "browser": true,
+        "jest": true
+    }
 }
