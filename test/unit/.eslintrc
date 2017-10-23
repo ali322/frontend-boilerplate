@@ -1,0 +1,13 @@
+{
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "sourceType": "module"
+    },
+    "env": {
+        "node":true,
+        "browser": true
+    },
+    "plugins": [
+        "jest"
+    ]
+}

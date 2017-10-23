@@ -3,34 +3,28 @@
   "version": "0.1.0",
   "description": "frontend project boilerplate",
   "scripts": {
-    "start": "cd dist && nva-server -P . -A . --mock ../.nva/mock/*.json --index /index/",
-    "test": "BABEL_ENV=test ava --tap | tap-spec",
+    "start":
+      "cd dist && nva-server -P . -A . --mock ../.nva/mock/*.json --index /index/",
+    "test": "jest",
     "test:e2e": "nva-test-e2e -s test/e2e/server.js",
     "lint:js": "eslint src",
     "lint:css": "stylelint \"src/**/*.{css,less,scss,styl}\"",
     "lint": "npm run lint:js && npm run lint:css"
   },
-  "ava": {
-    "files": [
-      "test/unit/spec/**/*.js"
-    ],
-    "failFast": true,
-    "powerAssert": false,
-    "require": [
-      "babel-register",
-      "./test/unit/helpers/setup-browser-env.js"
-    ],
-    "babel": "inherit"
+  "jest": {
+    "testMatch": ["**/test/unit/spec/**/*.js"],
+    "moduleNameMapper": {
+      "^@/(.+)$": "<rootDir>/src/$1"
+    },
+    "collectCoverage": true,
+    "coverageDirectory": "<rootDir>/test/unit/coverage",
+    "mapCoverage": true
   },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/ali322/frontend-boilerplate.git"
   },
-  "keywords": [
-    "frontend",
-    "webpack",
-    "gulp"
-  ],
+  "keywords": ["frontend", "webpack", "gulp"],
   "author": "alichen",
   "license": "MIT",
   "bugs": {
