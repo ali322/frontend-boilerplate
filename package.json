@@ -4,23 +4,22 @@
   "description": "frontend project boilerplate",
   "scripts": {
     "start": "cd dist && nva-server -P . -A . --rewrites --mock ../.nva/mock/*.js",
-    "test": "BABEL_ENV=test ava --tap | tap-spec",
-    "test:e2e": "nva-test-e2e -s test/e2e/server.js",
+    "test": "jest",
+    "test:e2e": "jest",
     "lint:js": "eslint src",
     "lint:css": "stylelint \"src/**/*.{css,less,scss,styl}\"",
     "lint": "npm run lint:js && npm run lint:css"
   },
-  "ava": {
-    "files": [
-      "test/unit/spec/**/*.js"
+  "jest": {
+    "testMatch": [
+      "**/test/unit/spec/**/*.js"
     ],
-    "failFast": true,
-    "powerAssert": false,
-    "require": [
-      "babel-register",
-      "./test/unit/helpers/setup-browser-env.js"
-    ],
-    "babel": "inherit"
+    "moduleNameMapper": {
+      "^@/(.+)$": "<rootDir>/src/$1"
+    },
+    "collectCoverage": true,
+    "coverageDirectory": "<rootDir>/test/unit/coverage",
+    "mapCoverage": true
   },
   "repository": {
     "type": "git",
@@ -37,9 +36,9 @@
   },
   "homepage": "https://github.com/ali322/frontend-boilerplate#readme",
   "devDependencies": {
-    "ava": "^0.17.0",
     "babel-core": "^6.0.0",
     "babel-eslint": "^7.1.1",
+    "babel-jest": "^21.2.0",
     "babel-plugin-transform-class-properties": "^6.23.0",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
@@ -60,7 +59,7 @@
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-react": "^6.9.0",
     "eslint-plugin-standard": "^3.0.1",
-    "nock": "^9.0.6",
+    "jest": "^21.2.1",
     "nva-server": "^0.3.139",
     "react-hot-loader": "^3.0.0-beta.7",
     "react-test-renderer": "^15.5.4",
@@ -69,7 +68,6 @@
     "sinon": "^2.3.1",
     "stylelint": "^7.8.0",
     "stylelint-config-standard": "^16.0.0",
-    "tap-spec": "^4.1.1",
     "webpack": "^2.4.1"
   },
   "dependencies": {
