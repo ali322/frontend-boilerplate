@@ -1,26 +1,28 @@
-import sinon from "sinon"
-import React from "react"
-import { shallow } from "enzyme"
-import { Index } from "@/index/module/app.jsx"
+import React from 'react'
+import { shallow } from 'enzyme'
+import { Index } from '@/index/module/app.jsx'
 
-describe("index component", () => {
+describe('index component', () => {
   let wrapper, props
   beforeEach(() => {
     props = {
       actions: {
-        fetchEvents: sinon.spy()
+        fetchEvents: jest.fn()
       },
       events: []
     }
     wrapper = shallow(<Index {...props} />)
   })
-  test("should render correct", () => {
-    expect(wrapper.find(".content").length).toBe(1)
+  test('should render correct', () => {
+    expect(wrapper.find('.content').length).toBe(1)
   })
 
-  test('should call handleRefresh once after click',()=>{
-    let button = wrapper.find(".refresh-btn")
-    button.simulate("click", { target: { value: "" }, preventDefault: () => {} })
-    expect(props.actions.fetchEvents.callCount).toBe(1)
+  test('should call handleRefresh once after click', () => {
+    let button = wrapper.find('.refresh-btn')
+    button.simulate('click', {
+      target: { value: '' },
+      preventDefault: () => {}
+    })
+    expect(props.actions.fetchEvents).toHaveBeenCalledTimes(1)
   })
 })

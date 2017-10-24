@@ -1,10 +1,10 @@
-import moxios from "moxios"
-import configureStore from "redux-mock-store"
-import thunkMiddleware from "redux-thunk"
-import * as actions from "@/index/module/action"
-import * as constants from "@/index/module/constant"
+import moxios from 'moxios'
+import configureStore from 'redux-mock-store'
+import thunkMiddleware from 'redux-thunk'
+import * as actions from '@/index/module/action'
+import * as constants from '@/index/module/constant'
 
-describe("index action", () => {
+describe('index action', () => {
   let mockStore
   beforeEach(() => {
     moxios.install()
@@ -14,12 +14,12 @@ describe("index action", () => {
     moxios.uninstall()
   })
 
-  test("should RESPONSE_EVENTS when fetched", () => {
+  test('should RESPONSE_EVENTS when fetched', () => {
     let ret = {
-      status: "ok",
+      status: 'ok',
       data: []
     }
-    moxios.stubRequest("/mock/events", {
+    moxios.stubRequest('/mock/events', {
       status: 200,
       response: ret
     })

@@ -1,8 +1,8 @@
-import eventReducer from "@/index/module/reducer"
-import * as constants from "@/index/module/constant"
+import eventReducer from '@/index/module/reducer'
+import * as constants from '@/index/module/constant'
 
-describe("index reducer", () => {
-  test("should handle RESPONSE_EVENTS", () => {
+describe('index reducer', () => {
+  test('should handle RESPONSE_EVENTS', () => {
     let action = {
       type: constants.RESPONSE_EVENTS,
       payload: []
