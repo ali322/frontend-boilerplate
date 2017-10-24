@@ -1,4 +1,3 @@
-import sinon from 'sinon'
 import React from 'react'
 import { shallow } from 'enzyme'
 import { Index } from '@/index/app.jsx'
@@ -8,7 +7,7 @@ describe('index component', () => {
   beforeEach(() => {
     props = {
       actions: {
-        fetchEvents: sinon.spy()
+        fetchEvents: jest.fn()
       },
       events: []
     }
@@ -24,6 +23,6 @@ describe('index component', () => {
       target: { value: '' },
       preventDefault: () => {}
     })
-    expect(props.actions.fetchEvents.callCount).toBe(1)
+    expect(props.actions.fetchEvents).toHaveBeenCalledTimes(1)
   })
 })
