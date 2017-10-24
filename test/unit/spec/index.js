@@ -1,24 +1,22 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+import 'vue'
+import 'vue-router'
+import Vuex from 'vuex'
+import { shallow, createLocalVue } from 'vue-test-utils'
 import moxios from 'moxios'
-import sinon from 'sinon'
 import mutations from '@/index/mutation'
 import * as actions from '@/index/action'
 import * as constants from '@/index/constant'
 import app from '@/index/app.vue'
-import {
-  testAction,
-  renderedText,
-  createVM,
-  destoryVM,
-  triggerEvent
-} from '../fixture/util'
+import { testAction } from '../helper'
+
+const localVue = createLocalVue()
+localVue.use(Vuex)
 
 describe('mutations', () => {
   it(constants.RESPONSE_EVENTS, () => {
     let state = {}
     mutations[constants.RESPONSE_EVENTS](state)
-    expect(state.eventsFetched).to.equal(true)
+    expect(state.eventsFetched).toEqual(true)
   })
 })
 
@@ -41,7 +39,7 @@ describe('actions', () => {
 
     moxios.stubRequest('/mock/events', {
       status: 200,
-      responseText: JSON.stringify(ret)
+      response: ret
     })
 
     testAction(actions.fetchEvents, [], {}, actions, expectedMutations, done)
@@ -49,27 +47,25 @@ describe('actions', () => {
 })
 
 describe('component', () => {
-  let vm, fetchEvents
+  let wrapper, fetchEvents, store
   beforeEach(() => {
-    fetchEvents = sinon.spy()
-    vm = createVM({
-      ...app,
-      methods: { ...app.methods, fetchEvents },
-      computed: {}
+    fetchEvents = jest.fn()
+    store = new Vuex.Store({
+      state: { index: { events: [] } },
+      actions: { fetchEvents }
     })
-  })
-  afterEach(() => {
-    destoryVM(vm)
+    wrapper = shallow(app, {
+      localVue,
+      store
+    })
+    wrapper.setMethods({ fetchEvents })
   })
   it('should render correct', () => {
-    expect(vm.$el.querySelectorAll('.content').length).to.equal(1)
+    expect(wrapper.findAll('.content').length).toBe(1)
   })
-  it('should call handleRefresh once after click', done => {
-    const button = vm.$el.querySelector('.refresh-btn')
-    triggerEvent(button, 'click')
-    vm.$nextTick(() => {
-      expect(fetchEvents.callCount).to.equal(2)
-      done()
-    })
+  it('should call handleRefresh once after click', () => {
+    const button = wrapper.find('.refresh-btn')
+    button.trigger('click')
+    expect(fetchEvents).toHaveBeenCalledTimes(2)
   })
 })

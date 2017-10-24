@@ -4,6 +4,9 @@
   "env": {
     "production": {
       "plugins": ["transform-runtime"]
+    },
+    "test": {
+      "presets": [["env", { "targets": { "node": "current" } }]]
     }
   }
 }
