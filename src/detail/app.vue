@@ -21,7 +21,8 @@ import * as actions from './action'
 export default {
   computed: {
     ...mapState({
-      detail: state => state.detail.detail
+      detail: state => state.detail.detail,
+      route: 'route'
     })
   },
   methods: {
@@ -31,7 +32,7 @@ export default {
     ...mapActions(Object.keys(actions))
   },
   created() {
-    this.fetchDetail()
+    this.fetchDetail(this.route.params.id)
   }
 }
 </script>
