@@ -1,0 +1,29 @@
+{
+  "startTime": "2017-12-04T08:45:55.521Z",
+  "endTime": "2017-12-04T08:45:56.862Z",
+  "userAgents": [
+    "Chrome 62.0.3202 / Mac OS X 10.12.6"
+  ],
+  "passed": 0,
+  "total": 1,
+  "skipped": 0,
+  "fixtures": [
+    {
+      "name": "get started",
+      "path": "/Users/alichen/Workspace/frontend/frontend-boilerplate/test/e2e/spec/index.js",
+      "tests": [
+        {
+          "name": "find anwser",
+          "errs": [
+            "A call to an async function is not awaited. Use the \"await\" keyword before actions, assertions or chains of them to ensure that they run in the right sequence.\n\nBrowser: Chrome 62.0.3202 / Mac OS X 10.12.6\n\n    4 |fixture('get started').page('http://127.0.0.1:9000/index/')\n    5 |\n    6 |test('find anwser', async t => {\n    7 |  let link = Selector('.event').nth(1)\n    8 |  let back = Selector('.btn')\n >  9 |  await t.click(link).expect(btn.value).eql('test')\n   10 |//   .expect(btn.exists).ok()\n   11 |})\n   12 |\n\n   at <anonymous> (/Users/alichen/Workspace/frontend/frontend-boilerplate/test/e2e/spec/index.js:9:11)\n   at test (/Users/alichen/Workspace/frontend/frontend-boilerplate/test/e2e/spec/index.js:6:1)",
+            "ReferenceError: btn is not defined\n\nBrowser: Chrome 62.0.3202 / Mac OS X 10.12.6\n\n    4 |fixture('get started').page('http://127.0.0.1:9000/index/')\n    5 |\n    6 |test('find anwser', async t => {\n    7 |  let link = Selector('.event').nth(1)\n    8 |  let back = Selector('.btn')\n >  9 |  await t.click(link).expect(btn.value).eql('test')\n   10 |//   .expect(btn.exists).ok()\n   11 |})\n   12 |\n\n   at <anonymous> (/Users/alichen/Workspace/frontend/frontend-boilerplate/test/e2e/spec/index.js:9:30)\n   at test (/Users/alichen/Workspace/frontend/frontend-boilerplate/test/e2e/spec/index.js:6:1)"
+          ],
+          "durationMs": 1268,
+          "screenshotPath": null,
+          "skipped": false
+        }
+      ]
+    }
+  ],
+  "warnings": []
+}
