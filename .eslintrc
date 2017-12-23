@@ -1,7 +1,7 @@
 {
   "parser": "babel-eslint",
   "extends": "standard",
-  "plugins": ["css-modules", "html"],
+  "plugins": ["css-modules", "vue"],
   "globals": {
     "__DEV__": true
   },
