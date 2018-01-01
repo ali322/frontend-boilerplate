@@ -1,6 +1,5 @@
 let OfflinePlugin = require("offline-plugin")
 let glob = require("glob")
-require('dist/vendor.json')
 
 module.exports = {
     type: "frontend",
