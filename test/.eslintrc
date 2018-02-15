@@ -3,8 +3,11 @@
     "parserOptions": {
         "sourceType": "module"
     },
+    "globals": {
+        "fixture": true
+    },
     "env": {
-        "node":true,
+        "node": true,
         "browser": true,
         "jest": true
     }
