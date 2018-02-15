@@ -1,6 +1,5 @@
 import { Selector } from 'testcafe'
 
-/* eslint-disable no-undef */
 fixture('get started').page('http://127.0.0.1:9000/index/')
 
 test('find anwser', async t => {
