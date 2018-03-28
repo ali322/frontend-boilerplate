@@ -49,6 +49,7 @@
   },
   "homepage": "https://github.com/ali322/frontend-boilerplate#readme",
   "devDependencies": {
+    "@vue/test-utils": "^1.0.0-beta.13",
     "babel-core": "^6.0.0",
     "babel-eslint": "^7.1.1",
     "babel-jest": "^21.2.0",
@@ -77,8 +78,7 @@
     "stylelint-config-standard": "^16.0.0",
     "vue-jest": "^2.0.0",
     "vue-loader": "^14.2.1",
-    "vue-template-compiler": "^2.5.16",
-    "vue-test-utils": "^1.0.0-beta.2"
+    "vue-template-compiler": "^2.5.16"
   },
   "dependencies": {
     "axios": "^0.16.2",
