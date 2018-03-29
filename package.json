@@ -4,7 +4,7 @@
   "description": "frontend project boilerplate",
   "scripts": {
     "start": "cd dist && nva-server -P . -A . --rewrites --mock ../.nva/mock/*.js",
-    "test:e2e": "nva-test-e2e -s test/e2e/server.js -c test/e2e/config.js",
+    "test:e2e": "nva-test-e2e -c test/e2e/config.js",
     "test": "jest",
     "lint:js": "eslint src",
     "lint:css": "stylelint \"src/**/*.{css,less,scss,styl}\"",
