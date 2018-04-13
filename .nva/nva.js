@@ -7,6 +7,7 @@ module.exports = {
     autocheck: ['vue', 'vuex', 'vue-router', 'vuex-router-sync'],
     jsExt: ".js",
     cssExt: ".styl",
+    outputPrefix: '/'
     // beforeBuild(conf) {
     //     let vendors = []
     //     vendors = glob.sync("dist/vendor/*.@(js|css)")
