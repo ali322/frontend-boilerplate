@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "frontend project boilerplate",
   "scripts": {
-    "start": "cd dist && nva-server --rewrites --content . --mock ../.nva/mock/*.js",
+    "start": "nva-server --rewrites --content dist --mock ./.nva/mock/*.js",
     "test": "jest",
     "test:e2e": "nva-test-e2e -c test/e2e/config.js",
     "lint:js": "eslint src",
@@ -58,7 +58,7 @@
     "eslint-plugin-standard": "^3.0.1",
     "jest": "^21.2.1",
     "moxios": "^0.4.0",
-    "nva-server": "^0.5.31",
+    "nva-server": "^0.5.33",
     "react-hot-loader": "^3.0.0-beta.7",
     "react-test-renderer": "^15.5.4",
     "redux-mock-store": "^1.2.2",
