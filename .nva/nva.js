@@ -3,5 +3,6 @@ module.exports = {
   spa: true,
   autocheck: ['react', 'react-dom', 'redux'],
   jsExt: '.jsx',
-  cssExt: '.styl'
+  cssExt: '.styl',
+  outputPrefix: '/'
 }
