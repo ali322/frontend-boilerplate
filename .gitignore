@@ -6,6 +6,7 @@ dist/
 yarn-error.log
 yarn.lock
 npm-debug.log
+package-lock.json
 .nva/temp/
 test/unit/coverage
 selenium-debug.log
