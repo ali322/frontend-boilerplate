@@ -4,18 +4,18 @@
       <button class="refresh-btn refresh-icon" @click="handleRefresh"></button>
     </div>
     <div class="content">
-      <div class="event" v-for="event in events" :key="event.id">
+      <div v-for="event in events" :key="event.id" class="event">
         <a :href="'/detail/detail.html?id='+event.id">
           <div class="event-title">
             <img :src="event.avatar" alt="" />
             <span>
-              <p>{{event.name}}</p>
-              <p>{{event.created_at}}</p>
+              <p>{{ event.name }}</p>
+              <p>{{ event.created_at }}</p>
             </span>
             <i class="fa fa-caret-right" />
           </div>
-          <p>{{event.type}} In
-            <b>{{event.repo}}</b>
+          <p>{{ event.type }} In
+            <b>{{ event.repo }}</b>
           </p>
         </a>
       </div>
@@ -43,4 +43,3 @@ export default {
   }
 }
 </script>
-

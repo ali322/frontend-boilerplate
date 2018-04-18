@@ -3,13 +3,13 @@
     <div class="header header-with-btn">
       <button class="btn" @click="goBack">
         <i class="fa fa-arrow-left" />
-      </button>{{detail.name}}</div>
+    </button>{{ detail.name }}</div>
     <div class="content">
       <div class="detail">
         <img :src="detail.avatar" alt="" />
-        <p>Title: {{detail.title}}</p>
-        <p>Created at: {{detail.created_at}}</p>
-        <p>{{detail.message}}</p>
+        <p>Title: {{ detail.title }}</p>
+        <p>Created at: {{ detail.created_at }}</p>
+        <p>{{ detail.message }}</p>
       </div>
     </div>
   </div>
