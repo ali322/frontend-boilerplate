@@ -2,6 +2,7 @@ import { connected } from 'redux-container'
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import autobind from 'autobind-decorator'
+import { hot } from 'react-hot-loader'
 import * as actions from './action'
 
 export class Index extends Component {
@@ -25,7 +26,7 @@ export class Index extends Component {
     return (
       <div className="container">
         <div className="header">
-          Github Events{' '}
+          Github Events1
           <button
             className="refresh-btn refresh-icon"
             onClick={this.handleRefresh}
@@ -55,4 +56,4 @@ export class Index extends Component {
   }
 }
 
-export default connected(state => state, actions)(Index)
+export default hot(module)(connected(state => state, actions)(Index))
