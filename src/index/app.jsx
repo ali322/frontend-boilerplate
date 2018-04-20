@@ -27,7 +27,7 @@ export class Index extends Component {
     return (
       <div className="container">
         <div className="header">
-          Github Events{' '}
+          Github Events
           <button
             className="refresh-btn refresh-icon"
             onClick={this.handleRefresh}

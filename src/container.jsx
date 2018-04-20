@@ -1,15 +1,10 @@
 import { wrapper, configureStore } from 'redux-container'
 import rootReducer from './reducer'
-import Routes from './routes.jsx'
+import { hot } from 'react-hot-loader'
+import App from './app.jsx'
 
 const store = configureStore(rootReducer, {
   eventReducer: { events: [], repo: '' }
 })
-if (module.hot) {
-  module.hot.accept('./reducer', () => {
-    const nextReducer = require('./reducer')
-    store.replaceReducer(nextReducer)
-  })
-}
 
-export default wrapper(store)(Routes)
+export default wrapper(store)(hot(module)(App))

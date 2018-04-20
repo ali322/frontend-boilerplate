@@ -59,7 +59,6 @@
     "jest": "^21.2.1",
     "moxios": "^0.4.0",
     "nva-server": "^0.5.33",
-    "react-hot-loader": "^3.0.0-beta.7",
     "react-test-renderer": "^15.5.4",
     "redux-mock-store": "^1.2.2",
     "redux-thunk": "^2.2.0",
@@ -75,6 +74,7 @@
     "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
+    "react-hot-loader": "^4.1.0",
     "react-router-dom": "^4.1.1",
     "redux": "^3.6.0",
     "redux-container": "^1.0.26"
