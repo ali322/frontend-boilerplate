@@ -130,7 +130,7 @@ module.exports = [
     response: {
       status: 'ok',
       data: {
-        id: 6
+        id: 5
       }
     }
   }

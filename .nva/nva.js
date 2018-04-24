@@ -4,5 +4,6 @@ module.exports = {
   autocheck: ['react', 'react-dom', 'redux'],
   jsExt: '.jsx',
   cssExt: '.styl',
+  watch: ['.stylelintrc'],
   outputPrefix: '/'
 }
