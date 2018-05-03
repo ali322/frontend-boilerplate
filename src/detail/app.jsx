@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { connected } from 'redux-container'
-import * as actions from './action'
+import container from 'mobx-container'
+import { hot } from 'react-hot-loader'
+import store from './store'
 
 export class Detail extends Component {
   static propTypes = {
@@ -11,13 +12,14 @@ export class Detail extends Component {
     history: PropTypes.object
   }
   componentDidMount () {
-    const { fetchDetail } = this.props.actions
+    const { fetchDetail } = this.props.store
     const { id } = this.props.match.params
     fetchDetail({ id })
   }
   render () {
-    const { detail, history } = this.props
-    if (!detail) {
+    const { history } = this.props
+    const { event } = this.props.store
+    if (!event) {
       return null
     }
     return (
@@ -26,14 +28,14 @@ export class Detail extends Component {
           <button className="btn" onClick={history.goBack}>
             <i className="fa fa-arrow-left" />
           </button>
-          {detail.name}
+          {event.name}
         </div>
         <div className="content">
           <div className="detail">
-            <img src={detail.avatar} alt="" />
-            <p>Title: {detail.title}</p>
-            <p>Created at: {detail.created_at}</p>
-            <p>{detail.message}</p>
+            <img src={event.avatar} alt="" />
+            <p>Title: {event.title}</p>
+            <p>Created at: {event.created_at}</p>
+            <p>{event.message}</p>
           </div>
         </div>
       </div>
@@ -41,4 +43,4 @@ export class Detail extends Component {
   }
 }
 
-export default connected(state => state.detailReducer, actions)(Detail)
+export default hot(module)(container({ store })(Detail))

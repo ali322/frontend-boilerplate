@@ -11,6 +11,7 @@
   "rules": {
     "react/jsx-indent": "off",
     "no-unused-vars": "off",
+    "no-undef": "off",
     "import/extensions": "off",
     "import/no-extraneous-dependencies": "off",
     "import/no-named-as-default": "off",

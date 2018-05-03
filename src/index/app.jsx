@@ -2,8 +2,10 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import autobind from 'autobind-decorator'
-import { connected } from 'redux-container'
-import * as actions from './action'
+import { hot } from 'react-hot-loader'
+import { trace } from 'mobx'
+import container from 'mobx-container'
+import store from './store'
 
 export class Index extends Component {
   static propTypes = {
@@ -12,18 +14,17 @@ export class Index extends Component {
     events: PropTypes.array
   }
   componentDidMount () {
-    const { fetchEvents } = this.props.actions
+    const { fetchEvents } = this.props.store
     fetchEvents()
   }
   @autobind
   handleRefresh (e) {
     e && e.preventDefault()
-    const { fetchEvents } = this.props.actions
+    const { fetchEvents } = this.props.store
     fetchEvents()
   }
   render () {
-    let { events } = this.props
-    events = events || []
+    let { events } = this.props.store
     return (
       <div className="container">
         <div className="header">
@@ -57,4 +58,4 @@ export class Index extends Component {
   }
 }
 
-export default connected(state => state.eventReducer, actions)(Index)
+export default hot(module)(container({ store })(Index))
