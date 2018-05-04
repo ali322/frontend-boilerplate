@@ -1,15 +1,19 @@
+import 'raf/polyfill'
 import React from 'react'
-import { shallow } from 'enzyme'
+import Enzyme, { shallow } from 'enzyme'
+import Adapter from 'enzyme-adapter-react-16'
 import { Index } from '@/index/app.jsx'
+
+Enzyme.configure({ adapter: new Adapter() })
 
 describe('index component', () => {
   let wrapper, props
   beforeEach(() => {
     props = {
-      actions: {
-        fetchEvents: jest.fn()
-      },
-      events: []
+      store: {
+        fetchEvents: jest.fn(),
+        events: []
+      }
     }
     wrapper = shallow(<Index {...props} />)
   })
@@ -23,6 +27,6 @@ describe('index component', () => {
       target: { value: '' },
       preventDefault: () => {}
     })
-    expect(props.actions.fetchEvents).toHaveBeenCalledTimes(1)
+    expect(props.store.fetchEvents).toHaveBeenCalledTimes(2)
   })
 })
