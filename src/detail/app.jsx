@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import { withRouter } from 'react-router-dom'
 import { connected } from 'redux-container'
 import * as actions from './action'
 
@@ -23,7 +24,7 @@ export class Detail extends Component {
     return (
       <div className="container">
         <div className="header header-with-btn">
-          <button className="btn" onClick={history.goBack}>
+          <button className="btn" onClick={() => history.goBack()}>
             <i className="fa fa-arrow-left" />
           </button>
           {detail.name}
@@ -41,4 +42,4 @@ export class Detail extends Component {
   }
 }
 
-export default connected(state => state.detailReducer, actions)(Detail)
+export default withRouter(connected(state => state.detailReducer, actions)(Detail))

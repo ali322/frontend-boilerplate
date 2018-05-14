@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import autobind from 'autobind-decorator'
 import { connected } from 'redux-container'
 import * as actions from './action'
@@ -57,4 +57,4 @@ export class Index extends Component {
   }
 }
 
-export default connected(state => state.eventReducer, actions)(Index)
+export default withRouter(connected(state => state.eventReducer, actions)(Index))
