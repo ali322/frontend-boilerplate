@@ -13,11 +13,9 @@ export class Detail extends Component {
   }
   componentDidMount () {
     const { fetchDetail } = this.props.store
-    const { id } = this.props.match.params
-    fetchDetail({ id })
+    fetchDetail({ id: 123 })
   }
   render () {
-    const { history } = this.props
     const { event } = this.props.store
     if (!event) {
       return null
@@ -25,7 +23,7 @@ export class Detail extends Component {
     return (
       <div className="container">
         <div className="header header-with-btn">
-          <button className="btn" onClick={history.goBack}>
+          <button className="btn" onClick={() => window.history.back()}>
             <i className="fa fa-arrow-left" />
           </button>
           {event.name}

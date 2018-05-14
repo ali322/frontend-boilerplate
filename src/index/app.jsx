@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
 import autobind from 'autobind-decorator'
 import { hot } from 'react-hot-loader'
 import { trace } from 'mobx'
@@ -37,7 +36,7 @@ export class Index extends Component {
         <div className="content">
           {events.map(event => (
             <div className="event" key={event.id}>
-              <Link to={`/event/${event.id}`}>
+              <a href={`/detail/detail.html?id=${event.id}`}>
                 <div className="event-title">
                   <img src={event.avatar} alt="" />
                   <span>
@@ -49,7 +48,7 @@ export class Index extends Component {
                 <p>
                   {event.type} In <b>{event.repo}1</b>
                 </p>
-              </Link>
+              </a>
             </div>
           ))}
         </div>
