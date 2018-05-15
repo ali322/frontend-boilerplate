@@ -2,10 +2,7 @@ import Vue from 'vue'
 import { sync } from 'vuex-router-sync'
 import router from './router'
 import store from './store'
-
-let container = Vue.extend({
-  template: `<main><router-view></router-view></main>`
-})
+import Container from './container.vue'
 
 sync(store, router)
 
@@ -13,7 +10,7 @@ const app = new Vue({
   router,
   store,
   render (h) {
-    return h(container)
+    return h(Container)
   }
 })
 
