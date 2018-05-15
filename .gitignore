@@ -8,3 +8,4 @@ yarn.lock
 npm-debug.log
 .nva/temp/
 selenium-debug.log
+package-lock.json
