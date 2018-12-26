@@ -26,7 +26,7 @@ export default {
 <style>
 .slide-left-enter-active{
   position: absolute;
-  transition: transform 15s;
+  transition: transform .5s;
   opacity: 1;
 }
 .slide-left-enter{
