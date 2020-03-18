@@ -72,7 +72,7 @@
   },
   "dependencies": {
     "autobind-decorator": "^1.4.1",
-    "axios": "^0.15.3",
+    "axios": "^0.19.2",
     "font-awesome": "^4.7.0",
     "normalize.css": "^7.0.0",
     "react": "^15.5.4",
