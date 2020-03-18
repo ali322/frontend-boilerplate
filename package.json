@@ -36,6 +36,7 @@
   },
   "homepage": "https://github.com/ali322/frontend-boilerplate#readme",
   "devDependencies": {
+    "babel-loader": "^7.0.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^7.1.1",
     "babel-jest": "^21.2.0",
