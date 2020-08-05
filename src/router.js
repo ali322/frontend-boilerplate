@@ -13,14 +13,14 @@ const routes = [
   { path: '*', component: { template: '<div>not found</div>' } }
 ]
 
-const router = new VueRouter({
-  mode: 'history',
-  routes
-})
-
-router.beforeEach((to, from, next) => {
-  window.scrollTo(0, 0)
-  next()
-})
-
-export default router
+export default () => {
+  const router = new VueRouter({
+    mode: 'history',
+    routes
+  })
+  router.beforeEach((to, from, next) => {
+    window.scrollTo(0, 0)
+    next()
+  })
+  return router
+}

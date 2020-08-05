@@ -10,9 +10,11 @@ const modules = {
   detail
 }
 
-const store = new Vuex.Store({
-  state: {},
-  modules
-})
 
-export default store
+export default () => {
+  const store = new Vuex.Store({
+    state: {},
+    modules
+  })
+  return store
+}
