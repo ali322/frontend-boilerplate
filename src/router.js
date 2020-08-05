@@ -1,14 +1,31 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Index from './index/app.vue'
+import Layout from './layout.vue'
+import SubAPP from './subapp.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
-  { path: '/', component: Index },
   {
-    path: '/detail/:id',
-    component: r => require.ensure([], () => r(require('./detail/app.vue')))
+    path: '/',
+    component: Layout,
+    children: [
+      {
+        path: '/todo',
+        name: 'subapp',
+        component: SubAPP
+      },
+      {
+        path: '/',
+        name: 'index',
+        component: Index
+      },
+      {
+        path: '/detail/:id',
+        component: r => require.ensure([], () => r(require('./detail/app.vue')))
+      },
+    ]
   },
   { path: '*', component: { template: '<div>not found</div>' } }
 ]

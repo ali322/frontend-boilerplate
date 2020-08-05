@@ -30,29 +30,4 @@ function createApp(props = {}) {
   }).$mount(container ? container.querySelector('#app') : '#app')
 }
 
-if (!window.__POWERED_BY_QIANKUN__) {
-  createApp()
-}
-
-export function bootstrap() {
-  return Promise.resolve().then(() => {
-    console.log(`${PKGJson.name} app bootstraped`)
-  })
-}
-
-export async function mount(props) {
-  return Promise.resolve().then(() => {
-    console.log(`${PKGJson.name} app mounted`)
-    createApp(props)
-  })
-}
-
-export async function unmount() {
-  return Promise.resolve().then(() => {
-    app.$destroy()
-    app.$el.innerHTML = ''
-    app = null
-    store = null
-    router = null
-  })
-}
+createApp()
