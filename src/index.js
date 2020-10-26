@@ -5,6 +5,7 @@ import Container from './container.vue'
 import './common/responsive'
 import createStore from './store'
 import createRouter from './router'
+import 'font-awesome/css/font-awesome.css'
 // import * as offlinePluginRuntime from 'offline-plugin/runtime'
 
 // offlinePluginRuntime.install()

@@ -1,37 +1,39 @@
-// let OfflinePlugin = require("offline-plugin")
-// let glob = require("glob")
+let {
+  join
+} = require('path')
 const { name } = require('../package.json')
+
 const subappURL = 'http://localhost:5000/'
 
-function conf() {
+function rules(config) {
   return {
-      output: {
-          // publicPath: subappURL, // used by subapp
-          library: `${name}-[name]`,
-          libraryTarget: "umd"
-      }
-  };
+    output: {
+      publicPath: subappURL, // 作为子应用必须启用
+      library: `${name}-[name]`,
+      libraryTarget: 'umd',
+      // jsonpFunction: `webpackJsonp_${name}`
+    }
+  }
 }
-
 module.exports = {
-    type: "frontend",
-    spa: true,
-    strict: false,
-    autocheck: ['vue', 'vuex', 'vue-router', 'vuex-router-sync'],
-    jsExt: ".js",
-    cssExt: ".styl",
-    beforeDev() {
-      return conf()
-    },
-    beforeBuild() {
-      let result = conf()
-      result.output = {
-        publicPath: '/'
-      }
-      return result
-    },
-    outputPrefix: '/',
-    // hmrPath: subappURL, // used by subapp
-    // imagePrefix: url => `${subappURL}/asset/image/${url}`, // used by subapp
-    // fontPrefix: url => `${subappURL}/asset/font/${url}`, // used by subapp
+  type: "frontend", // 项目类型
+  spa: true, //是否单页应用,url rewrites 规则
+  jsExt: ".js", //入口js文件后缀名
+  cssExt: ".styl", //入口css文件后缀名
+  // autocheck: ['aid-elements-desktop', 'aid-font', 'aid-desktop'],
+  strict: false,
+  beforeDev(config) {
+    return rules(config)
+  },
+  beforeBuild(config) {
+    let result = rules(config)
+    result.output = {
+      publicPath: '/'
+    }
+    return result
+  },
+  hmrPath: subappURL, // 作为子应用必须启用
+  imagePrefix: url => `${subappURL}/asset/image/${url}`, // 作为子应用必须启用
+  fontPrefix: url => `${subappURL}/asset/font/${url}`, // 作为子应用必须启用
+  outputPrefix: '/' // 构建后index.html中资源路径的前缀
 }

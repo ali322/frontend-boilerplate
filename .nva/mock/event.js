@@ -9,7 +9,7 @@ module.exports = [
       properties: {
         status: {
           type: 'string',
-          pattern: 'ok'
+          pattern: 'ok',
         },
         data: {
           type: 'array',
@@ -20,44 +20,44 @@ module.exports = [
             required: ['id', 'name', 'created_at', 'type', 'repo', 'avatar'],
             properties: {
               id: {
-                $ref: '#/definitions/positiveInt'
+                $ref: '#/definitions/positiveInt',
               },
               name: {
                 type: 'string',
-                faker: 'name.findName'
+                faker: 'name.findName',
               },
               created_at: {
                 type: 'string',
                 chance: {
                   date: {
-                    string: true
-                  }
-                }
+                    string: true,
+                  },
+                },
               },
               type: {
                 type: 'string',
-                enum: ['pull request', 'push', 'create', 'delete']
+                enum: ['pull request', 'push', 'create', 'delete'],
               },
               repo: {
                 type: 'string',
-                faker: 'commerce.product'
+                faker: 'commerce.product',
               },
               avatar: {
                 type: 'string',
-                faker: 'internet.avatar'
-              }
-            }
-          }
-        }
+                faker: 'internet.avatar',
+              },
+            },
+          },
+        },
       },
       definitions: {
         positiveInt: {
           type: 'integer',
           minimum: 0,
-          exclusiveMinimum: true
-        }
-      }
-    }
+          exclusiveMinimum: true,
+        },
+      },
+    },
   },
   {
     url: /mock\/event\/\d+/,
@@ -69,7 +69,7 @@ module.exports = [
       properties: {
         status: {
           type: 'string',
-          pattern: 'ok'
+          pattern: 'ok',
         },
         data: {
           type: 'object',
@@ -77,32 +77,32 @@ module.exports = [
           properties: {
             name: {
               type: 'string',
-              faker: 'name.findName'
+              faker: 'name.findName',
             },
             created_at: {
               type: 'string',
               chance: {
                 date: {
-                  string: true
-                }
-              }
+                  string: true,
+                },
+              },
             },
             title: {
               type: 'string',
-              enum: ['Owner', 'Contributor']
+              enum: ['Owner', 'Contributor'],
             },
             avatar: {
               type: 'string',
-              faker: 'internet.avatar'
+              faker: 'internet.avatar',
             },
             message: {
               type: 'string',
-              faker: 'lorem.paragraph'
-            }
-          }
-        }
-      }
-    }
+              faker: 'lorem.paragraph',
+            },
+          },
+        },
+      },
+    },
   },
   {
     url: '/mock/event',
@@ -110,9 +110,9 @@ module.exports = [
     response: {
       status: 'ok',
       data: {
-        id: 6
-      }
-    }
+        id: 6,
+      },
+    },
   },
   {
     url: '/mock/event',
@@ -120,9 +120,9 @@ module.exports = [
     response: {
       status: 'ok',
       data: {
-        id: 6
-      }
-    }
+        id: 6,
+      },
+    },
   },
   {
     url: '/mock/event',
@@ -130,8 +130,8 @@ module.exports = [
     response: {
       status: 'ok',
       data: {
-        id: 6
-      }
-    }
-  }
+        id: 6,
+      },
+    },
+  },
 ]
