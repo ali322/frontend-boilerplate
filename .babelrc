@@ -1,12 +1,13 @@
 {
-  "presets": [["env", { "modules": false }]],
-  "plugins": ["transform-class-properties", "transform-object-rest-spread"],
-  "env": {
-    "production": {
-      "plugins": ["transform-runtime"]
-    },
-    "test": {
-      "presets": [["env", { "targets": { "node": "current" } }]]
+    "presets": [["env", { "modules": false }]],
+    "plugins": [
+        "transform-class-properties",
+        "transform-object-rest-spread",
+        ["transform-runtime", { "regenerator": true }]
+    ],
+    "env": {
+        "test": {
+            "presets": [["env", { "targets": { "node": "current" } }]]
+        }
     }
-  }
 }
