@@ -16,7 +16,7 @@ module.exports = {
             // publicPath: subappURL, // used by subapp
             library: `${name}-[name]`,
             libraryTarget: 'umd',
-            jsonpFunction: `webpackJsonp_${name}`
+            // jsonpFunction: `webpackJsonp_${name}`
         } 
       }
     },
@@ -26,7 +26,7 @@ module.exports = {
             // publicPath: subappURL, // used by subapp
             library: `${name}-[name]`,
             libraryTarget: 'umd',
-            jsonpFunction: `webpackJsonp_${name}`
+            // jsonpFunction: `webpackJsonp_${name}`
         } 
       }
     }

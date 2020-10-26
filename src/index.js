@@ -1,3 +1,6 @@
+import Vue from 'vue'
+import { sync } from 'vuex-router-sync'
+import PKGJson from '../package.json'
 import Container from './container.vue'
 import './common/responsive'
 import createStore from './store'
