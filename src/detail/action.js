@@ -11,8 +11,8 @@ export function responseDetail ({ commit }, payload) {
 
 export function fetchDetail({ dispatch, commit }, id) {
   dispatch('requestDetail')
-  const url = `//localhost:5000/mock/event/${id}` // used by subapp
-  // const url = '/mock/event/${id}'
+  // const url = `//localhost:5000/mock/event/${id}` // used by subapp
+  const url = `/mock/event/${id}`
   return axios.get(url).then(ret => {
     ret = ret.data
     dispatch('responseDetail', ret.data)

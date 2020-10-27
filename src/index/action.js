@@ -11,8 +11,8 @@ export function responseEvents ({ commit }, payload) {
 
 export function fetchEvents ({ commit, dispatch }, param) {
   dispatch('requestEvents')
-  const url = '//localhost:5000/mock/events' // used by subapp
-  // const url = '/mock/events'
+  // const url = '//localhost:5000/mock/events' // used by subapp
+  const url = '/mock/events'
   axios
     .get(url)
     .then(ret => {

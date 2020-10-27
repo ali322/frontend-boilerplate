@@ -15,7 +15,7 @@ const routes = [
 
 export default () => {
   const router = new VueRouter({
-    base: 'todo',
+    // base: 'todo', // used by subapp
     mode: 'history',
     routes
   })

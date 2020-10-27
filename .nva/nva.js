@@ -8,7 +8,7 @@ const subappURL = 'http://localhost:5000/'
 function rules(config) {
   return {
       output: {
-          publicPath: subappURL, // used by subapp
+          // publicPath: subappURL, // used by subapp
           library: `${name}-[name]`,
           libraryTarget: "umd",
           // uniqueName: `webpackJsonp_${name}`
@@ -32,8 +32,8 @@ module.exports = {
         }
         return result;
     },
-    hmrPath: subappURL, // used by subapp
-    imagePrefix: url => `${subappURL}asset/image/${url}`, // used by subapp
-    fontPrefix: url => `${subappURL}asset/font/${url}`, // used by subapp
+    // hmrPath: subappURL, // used by subapp
+    // imagePrefix: url => `${subappURL}asset/image/${url}`, // used by subapp
+    // fontPrefix: url => `${subappURL}asset/font/${url}`, // used by subapp
     outputPrefix: "/"
 };
