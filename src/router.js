@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Index from './index/app.vue'
 import Layout from './layout.vue'
-import SubAPP from './subapp.vue'
+import SubAPP from './module/subapp.vue'
+import SubRoute from './module/subroute.vue'
 
 Vue.use(VueRouter)
 
@@ -13,21 +13,17 @@ const routes = [
     children: [
       {
         path: '/todo',
-        name: 'subapp',
+        name: 'todo',
         component: SubAPP
       },
       {
-        path: '/',
-        name: 'index',
-        component: Index
-      },
-      {
-        path: '/detail/:id',
-        component: r => require.ensure([], () => r(require('./detail/app.vue')))
-      },
+        path: '/subroute',
+        name: 'subroute',
+        component: SubRoute
+      }
     ]
   },
-  { path: '*', component: { template: '<div>not found</div>' } }
+    { path: '*', component: { template: '<div>not found</div>' } }
 ]
 
 export default () => {

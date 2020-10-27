@@ -1,0 +1,62 @@
+.layout {
+  position: relative;
+}
+
+.layout-sidebar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1031;
+  width: 240px;
+  visibility: visible;
+  opacity: 1;
+  transition: all 0.15s;
+}
+
+.layout-content {
+  position: relative;
+  height: 100%;
+  transition: all 0.15s;
+  margin-left: 240px;
+}
+
+.layout--one-screen {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.layout--one-screen .layout-sidebar {
+  position: fixed;
+}
+
+.layout--one-screen .layout-main {
+  position: absolute;
+  right: 0;
+  left: 0;
+  overflow: auto;
+}
+
+.layout-menu {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #191919;
+  margin: 0;
+  padding-top: 40px;
+
+  .layout-menu-item {
+    line-height: 40px;
+    padding: 0 20px;
+    a{
+      color: #FFF;
+      text-decoration: none;
+      font-size: 18px;
+    }
+  }
+}

@@ -1,3 +1,5 @@
+import Vue from 'vue'
+import { sync } from 'vuex-router-sync'
 import Container from './container.vue'
 import './common/responsive'
 import createStore from './store'
@@ -8,7 +10,6 @@ import createRouter from './router'
 
 let router = null
 let store = null
-let app = null
 
 function createApp(props = {}) {
   const { container } = props
@@ -21,7 +22,7 @@ function createApp(props = {}) {
     module.hot.accept()
   }
 
-  app = new Vue({
+  new Vue({
     store,
     router,
     render(h) {
