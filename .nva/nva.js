@@ -11,7 +11,7 @@ function rules(config) {
       publicPath: subappURL, // 作为子应用必须启用
       library: `${name}-[name]`,
       libraryTarget: 'umd',
-      // jsonpFunction: `webpackJsonp_${name}`
+      jsonpFunction: `webpackJsonp_${name}`
     }
   }
 }
@@ -27,9 +27,9 @@ module.exports = {
   },
   beforeBuild(config) {
     let result = rules(config)
-    result.output = {
-      publicPath: '/'
-    }
+    // result.output = {
+    //   publicPath: '/'
+    // }
     return result
   },
   hmrPath: subappURL, // 作为子应用必须启用

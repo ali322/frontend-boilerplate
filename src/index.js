@@ -5,7 +5,6 @@ import Container from './container.vue'
 import './common/responsive'
 import createStore from './store'
 import createRouter from './router'
-import 'font-awesome/css/font-awesome.css'
 // import * as offlinePluginRuntime from 'offline-plugin/runtime'
 
 // offlinePluginRuntime.install()
@@ -34,29 +33,27 @@ function createApp(props = {}) {
   }).$mount(container ? container.querySelector('#app') : '#app')
 }
 
+function destroyApp() {
+  app.$destroy()
+  app = null
+  store = null
+  router = null
+}
+
 if (!window.__POWERED_BY_QIANKUN__) {
   createApp()
 }
 
-export function bootstrap() {
-  return Promise.resolve().then(() => {
-    console.log(`${PKGJson.name} app bootstraped`)
-  })
+export async function bootstrap() {
+  console.log('bootstrap')
 }
 
 export async function mount(props) {
-  return Promise.resolve().then(() => {
-    console.log(`${PKGJson.name} app mounted`)
-    createApp(props)
-  })
+  console.log('mount')
+  createApp(props)
 }
 
 export async function unmount() {
-  return Promise.resolve().then(() => {
-    app.$destroy()
-    app.$el.innerHTML = ''
-    app = null
-    store = null
-    router = null
-  })
+  console.log('unmount')
+  destroyApp()
 }

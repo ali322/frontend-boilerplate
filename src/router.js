@@ -15,6 +15,7 @@ const routes = [
 
 export default () => {
   const router = new VueRouter({
+    base: 'todo',
     mode: 'history',
     routes
   })
