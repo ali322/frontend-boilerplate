@@ -60,7 +60,6 @@
     "eslint-plugin-standard": "^3.0.1",
     "jest": "^21.2.1",
     "moxios": "^0.4.0",
-    "nva-server": "^0.5.33",
     "react-test-renderer": "^15.5.4",
     "redux-mock-store": "^1.2.2",
     "redux-thunk": "^2.1.0",
@@ -69,6 +68,9 @@
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
     "webpack": "^4.6.0"
+  },
+  "peerDependencies": {
+    "nva-server": "^0.5.33"
   },
   "dependencies": {
     "autobind-decorator": "^1.4.1",
