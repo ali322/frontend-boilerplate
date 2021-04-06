@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "lib": ["dom", "esnext"],
+    "strict": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "noImplicitAny": true,
+    "jsx": "preserve",
+    "importHelpers": true,
+    "allowSyntheticDefaultImports":true,
+    "paths": {
+      "@/*": ["./*"],
+      "*": ["../typings/*"]
+    }
+  },
+  "include": [
+    "./src/**/*.ts",
+    "./src/**/*.vue",
+    "./src/**/*.js"
+  ],
+}
